@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PartialDataModel
+  FileVersion="6.0.0.54"
+  ID="{d0070bfa-3a9b-4da4-8521-f0e3bd99ebde}"
+  Name="Scheduler" xmlns="http://hand.com/AtHand.MPJ/1">
+  <Model>
+    <ModelClasses>
+      <ModelClass
+        DistributionType="ServerOnly"
+        Group="System"
+        ID="{63c3df3c-b1a9-4060-9926-363dde16a0f9}"
+        IsRootDefinition="True"
+        Name="AH_Sched_JobData">
+        <ModelField
+          ID="{7eef0bb7-5ea7-4f11-8c56-13ec824510e6}"
+          Name="ahJobDataKey"
+          TextSize="32" />
+        <ModelField
+          ID="{d4096370-99d0-4b79-819f-6d2d3490e697}"
+          Name="ahJobDataValue" />
+        <ModelField
+          FieldType="Reference"
+          ID="{6ceaa660-41e0-4d09-be73-4b872d8cc239}"
+          IsParent="True"
+          Name="ahJobInfoRef"
+          ReferenceClass="AH_Sched_JobInfo"
+          ReferenceCollection="ahJobData" />
+      </ModelClass>
+      <ModelClass
+        DistributionType="ServerOnly"
+        Group="System"
+        ID="{d419fce5-dc43-4e32-9a14-8252353fce80}"
+        IsRootDefinition="True"
+        Name="AH_Sched_JobInfo">
+        <ModelField
+          CollectionClass="AH_Sched_JobData"
+          FieldType="Collection"
+          ID="{c6280ae0-0bc9-44fa-9cf8-dc9c50626450}"
+          Name="ahJobData"
+          ReferenceParent="ahJobInfoRef" />
+        <ModelField
+          ID="{594f619b-abf9-481f-bada-ddf3ecb6bc11}"
+          Name="ahAssemblyFile"
+          TextSize="256" />
+        <ModelField
+          FieldType="Number"
+          ID="{796f751c-9257-4007-b8ea-032023f17841}"
+          Name="ahExecutionOrder"
+          NumberType="Int32" />
+        <ModelField
+          ID="{cb66af1f-7de8-47bf-a993-c921a3cc3cb7}"
+          Name="ahJobGroup"
+          TextSize="32" />
+        <ModelField
+          ID="{5d24da8a-056c-4da3-a738-e29adbb6699d}"
+          Name="ahJobName"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{b3559420-62a6-49a8-934c-549d45f838cc}"
+          Name="ahLastFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{665185ae-6f53-4461-baa5-3c1e9b90c85d}"
+          Name="ahLastStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{7038daf4-9a36-4468-ae21-744ead2a715e}"
+          Name="ahTypeName"
+          TextSize="100" />
+        <ModelField
+          CollectionClass="AH_Sched_JobInfo"
+          FieldType="Collection"
+          ID="{30b28c95-0a41-4937-8f60-395c2e7af34f}"
+          Name="ahSubJobs"
+          ReferenceParent="ahParentRef" />
+        <ModelField
+          FieldType="Reference"
+          ID="{eba4c7a3-8b4b-4e46-bbeb-a0b500e5c847}"
+          IsParent="True"
+          Name="ahParentRef"
+          ReferenceClass="AH_Sched_JobInfo"
+          ReferenceCollection="ahSubJobs" />
+      </ModelClass>
+      <ModelClass
+        DistributionType="ServerOnly"
+        Group="System"
+        ID="{36b0553e-0191-4b08-902e-8f40761ae86f}"
+        IsRootDefinition="True"
+        Name="AH_Sched_TriggerInfo">
+        <ModelField
+          ID="{5d6ba703-7048-4a2f-a2ee-4f63cc2ed5b5}"
+          Name="ahCronExpression" />
+        <ModelField
+          FieldType="Number"
+          ID="{145e7ef7-9ad6-4984-978e-d36be5498b5b}"
+          Name="ahInterval"
+          NumberType="Int32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{a8cdb251-9627-4a7f-a073-057cd041c5a7}"
+          Name="ahStartDate"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{1b8cc965-bf51-4ef8-8aa5-96e3a355ef62}"
+          Name="ahTriggerGroup"
+          TextSize="32" />
+        <ModelField
+          ID="{e93e4964-49a0-4d65-8eca-d0955dc5994d}"
+          Name="ahTriggerName"
+          TextSize="32" />
+        <ModelField
+          ID="{d9fb1c91-825a-4851-93dd-bac76ce84d4a}"
+          Name="ahType"
+          TextSize="10" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{c8d6b6cb-056c-4b94-8ed7-1bf60b91eea6}"
+          Name="ahJobRef"
+          ReferenceClass="AH_Sched_JobInfo" />
+      </ModelClass>
+    </ModelClasses>
+  </Model>
+  <PartialDataModelDependencies />
+</PartialDataModel>

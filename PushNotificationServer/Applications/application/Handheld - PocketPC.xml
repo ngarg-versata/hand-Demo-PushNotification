@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerApplication
+  FileVersion="6.0.0.54"
+  ID="{e6707d94-f502-4f07-8f00-0f0778b2ed05}" xmlns="http://hand.com/wmw-designer">
+  <Application
+    IntegratedWinAuth="False"
+    Name="Handheld"
+    ResetUserOnLogout="False"
+    StartPage="Login" xmlns="http://hand.com/AtHand.MPJ/1">
+    <Engine
+      Type="PocketPC" />
+    <Authentication
+      DeviceSharing="False"
+      Type="System">
+      <User
+        DataClass="AH_User"
+        LoginField="ahLogin" />
+      <ExternalAuth />
+    </Authentication>
+    <HomePage
+      Name="Home" />
+    <ExtensionDLLs />
+    <PageRefs>
+      <PageRef
+        Name="Login"
+        RelPath="Pages\Login.page"
+        Type="LoginPage" />
+      <PageRef
+        Name="Home"
+        RelPath="Pages\Home.page"
+        Type="MenuPage" />
+    </PageRefs>
+    <DictRefs />
+    <Title>
+      <Data />
+    </Title>
+    <Subtitle>
+      <Data />
+    </Subtitle>
+    <Variables />
+    <ExternalFiles />
+    <DataStore>
+      <Database
+        Type="SQLServerCompact" />
+    </DataStore>
+    <ApplicationHtmlRef
+      RelPath="application - PocketPC.ahtml" />
+    <ThemeRef
+      RelPath="application - PocketPC.theme" />
+    <GlobalActionRefs />
+    <ActionGroups />
+    <DictionaryGroups />
+    <PageGroups />
+  </Application>
+  <Shortcuts xmlns="http://hand.com/AtHand.MPJ/1">
+    <Shortcut
+      Caption="application"
+      Destination="%CE11%" />
+    <Shortcut
+      Caption="application"
+      Destination="%CE17%" />
+  </Shortcuts>
+  <Registry xmlns="http://hand.com/AtHand.MPJ/1" />
+  <StringMapRefs />
+</DesignerApplication>

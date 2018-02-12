@@ -1,0 +1,24 @@
+{
+  "name": "dojo",
+  "version": "1.10.1",
+  "main": [],
+  "ignore": [
+    "**/.*",
+    "test",
+    "tests",
+    "demo",
+    "demos",
+    "dojo-src"
+  ],
+  "devDependencies": {},
+  "dependencies": {},
+  "_release": "1.10.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.10.1",
+    "commit": "fd478ed8b7d4814c042aee0d0677a529bdd996d4"
+  },
+  "_source": "http://ausfmsdev01.hand.local/bonobo/athand-dojo.git",
+  "_target": "1.10.1",
+  "_originalSource": "athand-dojo"
+}

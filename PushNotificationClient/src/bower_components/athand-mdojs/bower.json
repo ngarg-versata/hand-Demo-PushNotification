@@ -1,0 +1,15 @@
+{
+  "name": "athand-mdojs",
+  "version": "6.5.104",
+  "description": "JavaScript library for accessing the M-Tier Sync Service",
+  "main": "mdo.js",
+  "moduleType": [
+    "amd"
+  ],
+  "authors": [
+    "@hand Corporation"
+  ],
+  "ignore": [
+    "**/.*"
+  ]
+}

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PartialDataModel
+  FileVersion="6.0.0.54"
+  ID="{6e99acc7-68cf-47bf-b0c8-91d54d548649}"
+  Name="PushNotifications" xmlns="http://hand.com/AtHand.MPJ/1">
+  <Model>
+    <ModelClasses>
+      <ModelClass
+        Group="PushNotifications"
+        ID="{368f8ccd-45ad-4c4f-b817-0a51bcaa8f7e}"
+        IsRootDefinition="True"
+        Name="AH_PushNotification">
+        <ModelField
+          FieldType="Timestamp"
+          ID="{0dd97842-4ad0-4927-a413-e4f69cde76bb}"
+          Name="ahCreatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{634de6e8-0ecd-4b87-9d5f-63828f9147c6}"
+          Name="ahTitle" />
+        <ModelField
+          FieldType="Memo"
+          ID="{c6d14829-7dca-4162-9a95-8070ff164e1d}"
+          Name="ahBody" />
+        <ModelField
+          FieldType="Memo"
+          ID="{85054baf-9c7d-409a-aee1-0071dc9af4af}"
+          Name="ahActionData" />
+        <ModelField
+          ID="{c216cfe8-7406-44b3-b777-cd724ec7d361}"
+          Name="ahActionCode"
+          TextSize="64" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{00b05f9a-59a1-4527-ab10-8beac7c8094e}"
+          Name="ahDismissedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{b61ffeda-8057-420e-aed7-d20abeefd521}"
+          Name="ahReadTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Reference"
+          ID="{f0325e51-cf11-4366-8d66-255167efe41b}"
+          IsParent="True"
+          Name="ahUserRef"
+          ReferenceClass="AH_User"
+          ReferenceCollection="ahPushNotifications" />
+        <ModelField
+          CollectionClass="AH_DevicePushNotification"
+          FieldType="Collection"
+          ID="{2933c03e-b6e8-4b85-8fb4-5e02c7d6cecc}"
+          Ownership="False"
+          Name="ahDevicePushNotifications"
+          ReferenceParent="ahPushNotificationRef" />
+        <ModelField
+          FieldType="Reference"
+          ID="{c1bd7455-ea2b-4da3-90ae-b6776802d9a8}"
+          Name="ahPushNotificationChannelRef"
+          ReferenceClass="AH_PushNotificationChannel" />
+      </ModelClass>
+      <ModelClass
+        ID="{f04fec98-8ab3-434b-bb7f-fd3bce1945ab}"
+        Name="AH_User">
+        <ModelField
+          CollectionClass="AH_PushNotification"
+          FieldType="Collection"
+          ID="{68cf16c6-2397-4955-ad62-0db724f0350c}"
+          Name="ahPushNotifications"
+          Ownership="False"
+          ReferenceParent="ahUserRef" />
+      </ModelClass>
+      <ModelClass
+        Group="PushNotifications"
+        ID="{a511f853-0732-49a3-90ca-f114ea99232b}"
+        IsRootDefinition="True"
+        Name="AH_DevicePushNotification">
+        <ModelField
+          FieldType="Reference"
+          ID="{ff20fa58-acb4-4738-af26-a4ab9c28b3ad}"
+          IsParent="True"
+          Name="ahDeviceRef"
+          ReferenceClass="AH_Device"
+          ReferenceCollection="ahDevicePushNotifications" />
+        <ModelField
+          FieldType="Reference"
+          ID="{88578d13-e798-4704-b0c1-160d085b0451}"
+          IsParent="True"
+          Name="ahPushNotificationRef"
+          ReferenceClass="AH_PushNotification"
+          ReferenceCollection="ahDevicePushNotifications" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{2520c324-84d9-4640-a89d-f89e3139d7f2}"
+          Name="ahReceivedTs"
+          TimestampType="Timestamp" />
+      </ModelClass>
+      <ModelClass
+        ID="{976c0191-0685-4648-bab3-210849572ded}"
+        Name="AH_Device">
+        <ModelField
+          CollectionClass="AH_DevicePushNotification"
+          FieldType="Collection"
+          ID="{69c43df6-d217-4231-bb42-0e36d49d2c6f}"
+          Name="ahDevicePushNotifications"
+          ReferenceParent="ahDeviceRef" />
+        <ModelField
+          ID="{cd9b6bbc-d48b-42e9-ab92-b023195f85d1}"
+          Name="ahPushNotificationDeviceId"
+          TextSize="256" />
+        <ModelField
+          ID="{3528667b-f686-4341-9e6e-3abba3d6078e}"
+          Name="ahPushNotificationPlatform"
+          TextSize="16" />
+        <ModelField
+          FieldType="Reference"
+          ID="{cf15adc5-f286-41c8-836f-d03a8eeca563}"
+          Name="ahPushNotificationChannelRef"
+          ReferenceClass="AH_PushNotificationChannel" />
+      </ModelClass>
+      <ModelClass
+        Group="PushNotifications"
+        ID="{cbeedf55-489b-4792-9548-bbc1144323fa}"
+        IsRootDefinition="True"
+        Name="AH_PushNotificationChannel">
+        <ModelField
+          ID="{273c7300-faab-4439-aa27-1ff86f4428f5}"
+          Name="ahSenderId" />
+        <ModelField
+          AllowNull="False"
+          ID="{5a7da7b9-d7ed-403d-ab11-20462b73ecc6}"
+          IsReadOnly="True"
+          IsTableUniqueID="True"
+          Name="ahChannel"
+          TextSize="64" />
+      </ModelClass>
+    </ModelClasses>
+  </Model>
+  <PartialDataModelDependencies>
+    <Reference
+      Name="System"
+      RelPath="System.pdm"
+      TargetID="{c061c71f-82a7-4532-b462-ca488b9b76e4}" />
+  </PartialDataModelDependencies>
+</PartialDataModel>

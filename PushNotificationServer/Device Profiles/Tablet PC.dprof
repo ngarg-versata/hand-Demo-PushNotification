@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceProfile
+  FileVersion="6.0.0.54"
+  InstallDir="c:\@hand"
+  Name="Tablet PC"
+  OSType="Windows"
+  ProcessorType="x86" xmlns="http://hand.com/AtHand.MPJ/1">
+  <ExternalFiles />
+  <Registry />
+</DeviceProfile>

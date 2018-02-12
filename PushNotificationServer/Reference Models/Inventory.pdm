@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PartialDataModel
+  FileVersion="6.0.0.54"
+  ID="{dad9c665-6f94-45d4-88a9-1b8efb688aac}"
+  Modules="{2eda5802-eb55-465b-bd78-1225f87b8b03}"
+  Name="Inventory" xmlns="http://hand.com/AtHand.MPJ/1">
+  <Model>
+    <ModelClasses>
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Inventory"
+        ID="{33731d93-fc64-4214-829a-d075041c8dbe}"
+        IsRootDefinition="True"
+        Name="AH_InvReceipt">
+        <ModelField
+          FieldID="22"
+          ID="{e8ad2dc2-a486-42fa-8f6e-7962ab552dfe}"
+          Name="ahUnit"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{af059e78-0b45-4c7d-a47c-1c74342cbb77}"
+          Name="ahDueQty"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{795a99f3-6965-48c6-b84e-c251a78d53f6}"
+          Name="ahItemDesc" />
+        <ModelField
+          ID="{2ce52967-e83e-4599-9a26-7f2887e0c822}"
+          Name="ahItemNum"
+          TextSize="32" />
+        <ModelField
+          ID="{32b5e23a-ac8d-455e-8f21-ae41da4b0d96}"
+          Name="ahLocation"
+          TextSize="64" />
+        <ModelField
+          FieldType="Number"
+          ID="{b016bc7f-e1be-42dd-b0cc-f26c6c9811ef}"
+          Name="ahPoLine"
+          NumberType="Int32" />
+        <ModelField
+          ID="{c82773cc-d508-424f-8f6f-35a3b0b03d47}"
+          Name="ahPurchaseOrder"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{894ca373-dffa-4022-a8ab-32467227ce75}"
+          Name="ahQty"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{deb19cc1-4b63-4f9e-b568-373bdbf6a0cb}"
+          Name="ahReceivedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{74ce2bfd-6e69-4d5a-b15a-acdc844042ca}"
+          Name="ahReceivedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{0273ab3a-3639-46e3-84e4-77f20230f14a}"
+          Name="ahToBin"
+          TextSize="32" />
+        <ModelField
+          Comments="Location"
+          ID="{e95d0503-2abf-45b1-a277-3c3849e41d7e}"
+          Name="ahToStoreroom"
+          TextSize="64" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{f2dedcfe-f0a5-455e-b36c-22ccf243e754}"
+          Name="ahShippedDate"
+          TimestampType="Timestamp" />
+      </ModelClass>
+      <ModelClass
+        Group="Inventory"
+        Name="AH_Xact" />
+      <ModelClass
+        Group="Inventory"
+        ID="{fb7a3563-9c2b-4853-9bc8-aefa6349f71e}"
+        IsRootDefinition="True"
+        Name="AH_PurchaseOrder">
+        <ModelField
+          FieldID="17"
+          FieldType="Reference"
+          ID="{e8c86ee2-c5b7-44f5-984f-59509d94cb12}"
+          Name="ahVendorRef"
+          ReferenceClass="AH_Vendor" />
+        <ModelField
+          CollectionClass="AH_PoLineItem"
+          FieldType="Collection"
+          ID="{6d42a41d-f6ca-454b-b43d-f8dfd45a3b0d}"
+          Name="ahPoLineItems"
+          Ownership="False"
+          ReferenceParent="ahPurchaseOrderRef" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{471ea0e3-9619-4c28-9577-fa536a1970de}"
+          Name="ahApprovedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{2eab7e23-4f88-4a16-8c93-e56b1eb0a405}"
+          Name="ahBuyer"
+          TextSize="64" />
+        <ModelField
+          ID="{fad9787a-f643-410c-a8e6-7fe74140b48c}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{b982029e-2b62-475e-bddd-8017be46e0f3}"
+          Name="ahExSite"
+          TextSize="32" />
+        <ModelField
+          ID="{e34a65e8-28fd-4341-81b4-e2ac4087ee19}"
+          Name="ahExType"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{3e573bb9-972d-4780-a854-a2e367619fb5}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{c15ea710-51b0-4b60-9385-7b416ce23b25}"
+          Name="ahOrderedDate"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{340f5a96-b26f-4d8d-a63d-9eb61d0d7e21}"
+          Name="ahPurchaseReq"
+          TextSize="32" />
+        <ModelField
+          ID="{6f36315f-1efe-4f55-a923-40877698ebf5}"
+          Name="ahPurchaseOrder"
+          TextSize="32" />
+        <ModelField
+          ID="{af67055e-bbb0-4969-bcb9-20dab704d476}"
+          Name="ahStatus"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{4549a468-cd01-4473-b34a-dce5a17da7aa}"
+          Name="ahStatusTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{09f406fe-d0df-42a6-9726-96691b11159b}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{99147485-5aae-4748-9920-41b0a626a311}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+      </ModelClass>
+      <ModelClass
+        DistributionType="RuleBased"
+        Group="Inventory"
+        ID="{1f7552a8-8313-48e9-9c66-16dc9b20906e}"
+        IsRootDefinition="True"
+        Name="AH_PoLineItem">
+        <ModelField
+          FieldType="Reference"
+          ID="{a026bcb1-59d6-4008-8e51-f3ff1adf78e8}"
+          Name="ahComponentRef"
+          ReferenceClass="AH_Component" />
+        <ModelField
+          ID="{c0a23940-5163-4f68-8371-5008e82565a3}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{69cf5cf9-28af-494e-a683-3be1a0ca6b15}"
+          Name="ahExSite"
+          TextSize="32" />
+        <ModelField
+          ID="{c817f7cb-5789-472d-848c-25477e9665b1}"
+          Name="ahExStatus"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{8e688fb6-cf01-4acf-83c0-27980a7d9ed8}"
+          Name="ahLineNum"
+          NumberType="Int32" />
+        <ModelField
+          FieldType="Number"
+          ID="{36037c7c-8759-48f1-932d-c00c728ceb75}"
+          Name="ahQty"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{5c85a828-854a-4633-aae8-e670fb35c389}"
+          Name="ahUnit"
+          TextSize="32" />
+        <ModelField
+          ID="{3bc166bf-fd78-4ecc-9f40-d6a960cb6bae}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{0089f0ec-5711-41fb-9432-ab397796b6c3}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Reference"
+          ID="{ced30ff6-a18a-46ff-9588-f0fb554e115a}"
+          IsParent="True"
+          Name="ahPurchaseOrderRef"
+          ReferenceClass="AH_PurchaseOrder"
+          ReferenceCollection="ahPoLineItems" />
+        <ModelField
+          FieldType="Number"
+          ID="{d751b120-9041-4b1c-9993-00cedf1f0013}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          FieldType="Number"
+          ID="{1158fac9-8e36-4f86-b565-dfe509037ba2}"
+          Name="ahReceivedQty"
+          NumberType="Decimal" />
+      </ModelClass>
+      <ModelClass
+        Group="Inventory"
+        ID="{43a5963f-adcd-4d14-97fe-fae71c64ec12}"
+        IsRootDefinition="True"
+        Name="AH_Storeroom">
+        <ModelField
+          ID="{5c8f36cf-a7bb-4528-aa15-d1b3f774d7d9}"
+          Name="ahDescription" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{15f3779d-56fb-45f5-9612-a4a68001f8ee}"
+          Name="ahIsActive" />
+        <ModelField
+          ID="{1cfc5874-db4a-4669-89c2-8dd2260dc3e3}"
+          Name="ahStoreroom"
+          TextSize="32" />
+        <ModelField
+          ID="{f571c0d1-fb73-4a11-bf3d-8e5aac0e76ea}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{66ad7bfa-4532-4b8f-b54a-f30f7f486d75}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          CollectionClass="AH_Bin"
+          FieldType="Collection"
+          ID="{8752ed9d-8378-4f3c-bd12-fed95e6c93ac}"
+          Name="ahBins"
+          ReferenceParent="ahStoreroomRef" />
+        <ModelField
+          CollectionClass="AH_Inventory"
+          FieldType="Collection"
+          ID="{155e011d-7df6-441d-a9bd-4488c92d3047}"
+          Name="ahInventory"
+          ReferenceParent="ahStoreroomRef" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{703ed34b-7bdb-4dd7-93fe-5b06ee12839a}"
+          Indexed="True"
+          IsParent="True"
+          Name="ahSiteRef"
+          ReferenceClass="AH_Site"
+          ReferenceCollection="ahStorerooms" />
+      </ModelClass>
+      <ModelClass
+        Group="Inventory"
+        ID="{f6a73bc2-ffc5-41d8-a83f-ddb1c365f76b}"
+        IsRootDefinition="True"
+        Name="AH_Bin">
+        <ModelField
+          FieldType="Reference"
+          ID="{6211011e-2308-474c-9b04-2fc3797182e6}"
+          IsParent="True"
+          Name="ahStoreroomRef"
+          ReferenceClass="AH_Storeroom"
+          ReferenceCollection="ahBins" />
+        <ModelField
+          ID="{adce547b-74e3-4abb-bb87-63c1c6467617}"
+          Name="ahDescription" />
+        <ModelField
+          FieldType="Number"
+          ID="{80f5e328-fbf9-4d58-b9f3-08303f48b4f2}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{5d2768f3-bd52-4f2b-86a3-4fa1ef085d07}"
+          Name="ahBin"
+          TextSize="32" />
+        <ModelField
+          ID="{9cada4a9-ba43-4d03-bef0-fd9804b49571}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{298e5bea-bb33-456d-a1ee-569aa6c77e0a}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+      </ModelClass>
+      <ModelClass
+        Group="Inventory"
+        ID="{05803ed6-4e22-4615-afd3-8d57bc38ea73}"
+        IsRootDefinition="True"
+        Name="AH_Count">
+        <ModelField
+          ID="{f0a03cfa-240b-4b97-8678-7ca6a33a85f4}"
+          Name="ahCount"
+          TextSize="64" />
+        <ModelField
+          ID="{f6f5d543-1744-4d44-9abc-15f7dfb06375}"
+          Name="ahType"
+          TextSize="32" />
+        <ModelField
+          ID="{b1c9905d-ff3f-439b-be59-814e8cc9c1ef}"
+          Name="ahCountBy"
+          TextSize="32" />
+        <ModelField
+          ID="{08530a29-62a4-4639-9d3a-5d99bb161e86}"
+          Name="ahStoreroom"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{4c27e4a1-6f08-4601-b77b-b02d4c39989b}"
+          Name="ahCountDate"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{223f79cf-e6fe-4a3e-a236-8d3b72e7be5f}"
+          Name="ahStatus"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{8fc09d62-9b60-4c09-894d-e044a12495bd}"
+          Name="ahStatusTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{ad8c1f1d-96cd-46f9-b86d-0d4e1fdeb505}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          CollectionClass="AH_CountLine"
+          FieldType="Collection"
+          ID="{11c5fd4f-326d-4ac1-8940-9462b2f81a06}"
+          Name="ahLines"
+          ReferenceParent="ahCountRef" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{b59bc4f4-c5da-4c6b-990b-491a67ee69e9}"
+          Indexed="True"
+          IsParent="True"
+          Name="ahUserRef"
+          ReferenceClass="AH_User"
+          ReferenceCollection="ahCounts" />
+        <ModelField
+          ID="{3e7d4bbb-413e-4ce2-83ce-0050c0d34225}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{755e49f8-2d04-442a-a06f-9c4c42c912a7}"
+          Name="ahExSite"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        Group="Inventory"
+        ID="{bf40ef86-d9a5-43c0-b040-d876e8966096}"
+        IsRootDefinition="True"
+        Name="AH_CountLine">
+        <ModelField
+          ID="{7c683fbf-a8a8-4de9-8b55-dbe6d3b4281a}"
+          Name="ahLineNum"
+          TextSize="32" />
+        <ModelField
+          FieldType="Reference"
+          ID="{30f39a97-18ae-4bf0-a165-0f5068bee4a3}"
+          IsParent="True"
+          Name="ahCountRef"
+          ReferenceClass="AH_Count"
+          ReferenceCollection="ahLines" />
+        <ModelField
+          ID="{ff1ca783-7d2f-49e0-a74d-0ad9b1c1e45d}"
+          Name="ahStatus"
+          TextSize="32" />
+        <ModelField
+          ID="{532122aa-c221-4610-ba4d-810e548009da}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{672b5e2b-ebfc-4403-a2c9-7120040e1e26}"
+          Name="ahComponent"
+          TextSize="32" />
+        <ModelField
+          ID="{2774f166-cc45-42eb-ade6-0ca5e80320fa}"
+          Name="ahLot"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{fd338f4c-f2d3-4004-b0fb-c632d3972770}"
+          Name="ahQty"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Number"
+          ID="{8b9babf3-9b30-414c-8e62-ebf748f626c2}"
+          Name="ahSystemQty"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{0f479be1-ea94-452a-921e-aa730ae1461b}"
+          Name="ahUnit"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{9e06847c-7ef9-4b91-8a9a-2213c1ee1522}"
+          Name="ahCreatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{4817b1a9-811d-41c0-ac92-af8c015fd36b}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{fc4c89c8-ebd1-48f9-90d2-e32ad02dc1c1}"
+          Name="ahStoreroom"
+          TextSize="32" />
+        <ModelField
+          ID="{2e5f9ef6-6547-4aa9-90bd-420d682fa0af}"
+          Name="ahBin"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{a61452f9-ae8c-4ba3-a19e-246dfe0e923a}"
+          Name="ahQtyTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{e0c90d59-121f-4130-b421-993a065ba904}"
+          Name="ahQtyBy"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        Group="Inventory"
+        ID="{77003d00-6319-4a73-afd9-4b82cf5b97e7}"
+        IsRootDefinition="True"
+        Name="AH_Inventory">
+        <ModelField
+          FieldType="Number"
+          ID="{7fee1ca9-4e76-453f-b894-967b0623909b}"
+          Name="ahQty"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{aa069a7e-7f6f-425b-973c-a46a71571638}"
+          Name="ahExSite"
+          TextSize="32" />
+        <ModelField
+          ID="{be8528f8-81b4-41e6-b2cb-17e9f38db5d3}"
+          Name="ahUnit"
+          TextSize="32" />
+        <ModelField
+          ID="{c51d9854-c51d-466d-9bcc-c529dfb33ccf}"
+          Name="ahProcessBy"
+          TextSize="64" />
+        <ModelField
+          ID="{9fbc4ae9-161a-44b6-86cc-347cd409d139}"
+          Name="ahProcessStatus"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{aae53933-c872-4c7b-9b5b-76a187207ff8}"
+          Name="ahProcessTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{5b2cec3e-5f50-4389-a5cf-66963e5e71ec}"
+          Name="ahBin"
+          TextSize="64" />
+        <ModelField
+          ID="{01c9522a-eb82-437e-8712-d5771fa93506}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{303a8466-3b78-4116-a6f3-7efb6e3b81ff}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{8ced8aaf-0118-47ea-b659-4ffbd35da9f8}"
+          Name="ahLot"
+          TextSize="64" />
+        <ModelField
+          ID="{b7241b7a-d6ef-4eee-a0c0-ff230bd964c8}"
+          Name="ahSerialNum"
+          TextSize="64" />
+        <ModelField
+          FieldType="Reference"
+          ID="{02ede257-6499-4a9c-93c8-96e8681a14d6}"
+          Indexed="True"
+          Name="ahComponentRef"
+          ReferenceClass="AH_Component" />
+        <ModelField
+          FieldType="Reference"
+          ID="{fd63c4ef-1baf-451f-aa01-f7813ee55c8f}"
+          IsParent="True"
+          Name="ahStoreroomRef"
+          ReferenceClass="AH_Storeroom"
+          ReferenceCollection="ahInventory" />
+      </ModelClass>
+      <ModelClass
+        Group="Inventory"
+        ID="{3c9d6aef-f368-41d7-b307-053505fe2aec}"
+        IsRootDefinition="True"
+        Name="AH_Account">
+        <ModelField
+          FieldType="Reference"
+          ID="{b57c1064-8a9f-43cf-9c1b-1338bf3e1616}"
+          Name="ahParentRef"
+          ReferenceClass="AH_Account" />
+        <ModelField
+          ID="{1666b0d5-cbe3-4d95-b68c-89e4e5c32888}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{9759af0c-df9d-4dc2-bf8e-70a9863a042c}"
+          Name="ahAccount"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        Group="Inventory"
+        ID="{a1671b58-88e6-409f-b2d7-c426f03355b5}"
+        IsRootDefinition="True"
+        Name="AH_Project">
+        <ModelField
+          ID="{c7585a54-8684-4ded-925b-7b2252162520}"
+          Name="ahProject"
+          TextSize="32" />
+        <ModelField
+          ID="{247579bf-0ab1-4ad5-80c6-a07486528363}"
+          Name="ahDescription" />
+        <ModelField
+          FieldType="Reference"
+          ID="{94e6b93c-9d18-4501-9f10-a567fa1301ac}"
+          Name="ahParentRef"
+          ReferenceClass="AH_Project" />
+      </ModelClass>
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Inventory"
+        ID="{561feef0-99f0-4b75-bef8-ddebc4ae0c6a}"
+        IsRootDefinition="True"
+        Name="AH_InvXfer">
+        <ModelField
+          ID="{a072692d-bce9-4935-aa36-f154eb33ce65}"
+          Name="ahFromBin"
+          TextSize="32" />
+        <ModelField
+          ID="{9a1470a5-bae3-453e-931d-56216ea56f15}"
+          Name="ahFromStoreroom"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{32bcf964-3e5b-426a-a163-f8890d749475}"
+          Name="ahQty"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{dc006434-e06a-4168-8963-961d967c6e57}"
+          Name="ahToBin"
+          TextSize="32" />
+        <ModelField
+          ID="{85e65590-199d-49d0-93d6-1e9b0c03a9c6}"
+          Name="ahToStoreroom"
+          TextSize="32" />
+        <ModelField
+          ID="{9a029033-3f94-4a01-8aa7-4b34b4e3c6e2}"
+          Name="ahToSite"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{c4d78ed4-5491-4a01-aeaf-a16b58c766aa}"
+          Name="ahConfirmTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{1c346396-5421-4fea-8fd4-497cd646542c}"
+          Name="ahConfirmEmployee"
+          TextSize="32" />
+        <ModelField
+          ID="{2bb8d55d-8a49-44f4-8fc3-e8fc25e4edba}"
+          Name="ahSerialNum"
+          TextSize="32" />
+        <ModelField
+          ID="{e1fa726a-1b14-4ef8-8e5c-a246fd363b95}"
+          Name="ahUnit"
+          TextSize="32" />
+        <ModelField
+          FieldType="Reference"
+          ID="{7dae7128-1c95-4dc4-b583-07f8667f56fe}"
+          Name="ahXferRef"
+          ReferenceClass="AH_InvXfer" />
+        <ModelField
+          ID="{b2bd26dd-a4ba-4e64-a535-23a675db42e4}"
+          Name="ahComponent"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        DistributionType="RuleBased"
+        Group="Inventory"
+        Name="AH_Site">
+        <ModelField
+          CollectionClass="AH_Storeroom"
+          FieldType="Collection"
+          ID="{8efe0912-8ede-4497-a61f-e06846dbc8a8}"
+          Name="ahStorerooms"
+          ReferenceParent="ahSiteRef" />
+      </ModelClass>
+      <ModelClass
+        Group="System"
+        ID="{5f0677a2-c216-47c3-b641-f341d9c02580}"
+        IsRootDefinition="True"
+        Name="AH_Component">
+        <ModelField
+          ID="{396d9c51-89ac-4aa5-9674-5a922fe51452}"
+          Indexed="True"
+          Name="ahComponent"
+          TextSize="32" />
+        <ModelField
+          ID="{2145d57d-e219-40e7-9773-cadbe35157ef}"
+          Name="ahDescription" />
+        <ModelField
+          FieldType="Number"
+          ID="{ae69dd16-53d2-4ea0-962b-1df67527ef91}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          FieldType="Number"
+          ID="{41804b72-01e9-4849-93ae-7f0efd1d51ca}"
+          Name="ahListPrice"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{57f3737d-4b82-442a-b251-7dbfb4a7912b}"
+          Name="ahManufacturer" />
+        <ModelField
+          ID="{bba86b87-b640-4013-85f5-6d4f3114dcab}"
+          Name="ahModelNum" />
+        <ModelField
+          ID="{e5f97851-be5c-48ef-8a22-d44f57ec4cf0}"
+          Name="ahSerial"
+          TextSize="32" />
+        <ModelField
+          ID="{a354ab29-1121-4303-80bd-dabfcf97749a}"
+          Name="ahType"
+          TextSize="32" />
+        <ModelField
+          ID="{2124e51e-82f1-4542-9dec-4afbf9fcc5b0}"
+          Name="ahUnit"
+          TextSize="32" />
+        <ModelField
+          ID="{b3e4183b-0117-4ad6-aec7-c432ab1f0a8a}"
+          Name="ahUpdatedBy" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{61f75a2c-a640-4a7e-9740-973c28c5f086}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{ff182765-2d40-40ff-a9f2-f932b6284bc5}"
+          Indexed="True"
+          IsParent="True"
+          Name="ahWorkAreaRef"
+          ReferenceClass="AH_WorkArea"
+          ReferenceCollection="ahComponents" />
+      </ModelClass>
+      <ModelClass
+        ID="{f30407d3-bb80-44d8-8089-fdfc7ae18f25}"
+        Name="AH_WorkArea">
+        <ModelField
+          CollectionClass="AH_Component"
+          FieldType="Collection"
+          ID="{346338c5-1f38-4fdb-850c-901753b4a436}"
+          Name="ahComponents"
+          ReferenceParent="ahWorkAreaRef" />
+      </ModelClass>
+    </ModelClasses>
+  </Model>
+  <PartialDataModelDependencies>
+    <Reference
+      Name="System"
+      RelPath="System.pdm"
+      TargetID="{c061c71f-82a7-4532-b462-ca488b9b76e4}" />
+  </PartialDataModelDependencies>
+</PartialDataModel>

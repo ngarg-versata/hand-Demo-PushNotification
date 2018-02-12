@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Theme
+  FileVersion="6.0.0.54" xmlns="http://hand.com/AtHand.MPJ/1">
+  <Style
+    Font="Tahoma:8.25:Bold"
+    ForeColor="#000000"
+    Name="DefaultTabControl"
+    Type="Default" />
+  <Style
+    BackColor="#FFFFFF"
+    Font="Tahoma:9:Bold"
+    ForeColor="#000000"
+    Name="DefaultPageHeader"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultControlUnitLabel"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Bold"
+    ForeColor="#000000"
+    Name="DefaultButton"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Bold"
+    ForeColor="#000000"
+    Name="DefaultGroupTitle"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultDataPickerControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultLabelControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Bold"
+    ForeColor="#000000"
+    Name="DefaultPage"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultRadioControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultTextAreaControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultDateControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultTextControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultComboControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Bold"
+    ForeColor="#000000"
+    Name="DefaultControlLabel"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Bold"
+    ForeColor="#000000"
+    Name="DefaultRequiredControlLabel"
+    Type="Default" />
+  <Style
+    BackColor="#FFFFFF"
+    Font="Tahoma:8.25:Bold"
+    ForeColor="#000000"
+    Name="DefaultMenuText"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultListControl"
+    Type="Default" />
+  <Style
+    Name="DefaultListControlAltRow"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultNumericControl"
+    Type="Default" />
+  <Style
+    BackColor="#FFFFFF"
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultSignatureControl"
+    Type="Default" />
+  <Style
+    Name="DefaultListControlRow"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultSubPageControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultMenuDescription"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000099"
+    Name="DefaultPageSubtitle"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultImageControl"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Regular"
+    ForeColor="#000000"
+    Name="DefaultCheckBoxControl"
+    Type="Default" />
+  <Style
+    Name="DefaultListControlCheckedRow"
+    Type="Default" />
+  <Style
+    Font="Tahoma:9:Bold"
+    ForeColor="#000099"
+    Name="DefaultPageTitle"
+    Type="Default" />
+  <Style
+    Font="Tahoma:8.25:Underline"
+    ForeColor="#0000FF"
+    Name="DefaultLinkLabelControl"
+    Type="Default" />
+</Theme>

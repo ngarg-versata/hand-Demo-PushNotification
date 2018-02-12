@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PartialDataModel
+  FileVersion="6.0.0.54"
+  ID="{9009040a-f7c5-4be4-9217-d26b6ad59654}"
+  Name="Materials" xmlns="http://hand.com/AtHand.MPJ/1">
+  <Model>
+    <ModelClasses>
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Materials"
+        ID="{6158f4a8-28c6-487e-bc4d-3557407f5c5e}"
+        IsRootDefinition="True"
+        Name="AH_InvIssue">
+        <ModelField
+          ID="{8604050d-41ad-4ea5-bd23-c62446d0781a}"
+          Name="ahStoreroom"
+          TextSize="32" />
+        <ModelField
+          ID="{22533d74-bcad-42b2-b713-720227de4a87}"
+          Name="ahSerialNum"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{cebc0997-20ae-44f1-98a6-d86db79f3f28}"
+          Name="ahQty"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{6b2d522f-9b50-4e80-9112-6623d3a84f89}"
+          Name="ahUnit"
+          TextSize="32" />
+        <ModelField
+          ID="{ec4af104-5b8b-4361-b972-0d1a340ae2a8}"
+          Name="ahWorkOrder"
+          TextSize="32" />
+        <ModelField
+          ID="{cb81714c-4689-4d04-9349-f00be1a726e2}"
+          Name="ahEmployee"
+          TextSize="32" />
+        <ModelField
+          ID="{5b63da88-bef9-49d0-ab9a-517d49aed315}"
+          Name="ahAccount"
+          TextSize="21" />
+        <ModelField
+          ID="{86735a1b-5644-47a4-9a54-1a8b2587b24e}"
+          Name="ahProject"
+          TextSize="32" />
+        <ModelField
+          Comments="Addtional field to specify information related to the work order"
+          ID="{fb6daa47-afb8-4cee-a1be-419867b4377f}"
+          Name="ahWO2"
+          TextSize="64" />
+        <ModelField
+          ID="{5489d3b9-5cfc-4623-bc04-33d7947fb2bc}"
+          Name="ahItemNum"
+          TextSize="32" />
+        <ModelField
+          ID="{8664b436-4c57-4888-a0e9-0c54f833be40}"
+          Name="ahBin"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Materials"
+        ID="{fac5db4b-2f3f-40ea-b3c6-0fa4e4da3249}"
+        IsRootDefinition="True"
+        Name="AH_InvReturn">
+        <ModelField
+          Comments=""
+          ID="{741e5e87-acd4-4156-8dc1-5aff8731ad7a}"
+          Name="ahItemNum"
+          TextSize="32" />
+        <ModelField
+          ID="{a06fc793-3ce9-4a3b-a376-f4034cc7be57}"
+          Name="ahToBin"
+          TextSize="32" />
+        <ModelField
+          ID="{52e6ccd9-7262-4846-9ff0-ebc1ca994306}"
+          Name="ahToStoreroom"
+          TextSize="32" />
+        <ModelField
+          ID="{3b4f79a3-805d-4d2e-8446-dca13aa34137}"
+          Name="ahSerialNum"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{9d1c2d61-7db1-4afc-8ef3-008bc11d0fa0}"
+          Name="ahQty"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{de832182-7741-430c-bfc8-0bfe48386780}"
+          Name="ahUnit"
+          TextSize="32" />
+        <ModelField
+          ID="{57a8a8d0-63c4-4447-aaed-c6eb965655c2}"
+          Name="ahWorkOrder"
+          TextSize="32" />
+        <ModelField
+          ID="{942ab11b-e4cc-4f5d-8cad-ed5743b5a03f}"
+          Name="ahEmployee"
+          TextSize="32" />
+        <ModelField
+          ID="{add5c4d9-fef8-4db0-a410-8911864bf17e}"
+          Name="ahAccount"
+          TextSize="21" />
+        <ModelField
+          ID="{5650175b-6703-42aa-9d39-60e7b52c53f1}"
+          Name="ahProject"
+          TextSize="32" />
+        <ModelField
+          Comments="Addtional field to specify information related to the work order"
+          ID="{145aa894-5a8c-48ec-87bd-25f6937a1f56}"
+          Name="ahWO2"
+          TextSize="64" />
+      </ModelClass>
+      <ModelClass
+        Group="Materials"
+        ID="{53890d0c-1f27-490e-9e5c-2f21a730985b}"
+        IsRootDefinition="True"
+        Name="AH_WorkMaterial">
+        <ModelField
+          ID="{eef5fa5e-4e6a-48a2-8dcb-3dc54b66fd6a}"
+          Name="ahExUid"
+          TextSize="64" />
+        <ModelField
+          FieldType="Number"
+          ID="{c00eb0be-dda7-4c85-ba44-ba54f00b78ae}"
+          Name="ahPlannedQty"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Number"
+          ID="{9220566b-f509-460f-b9f8-f16b3cb60a26}"
+          Name="ahQty"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{c2b74d63-45eb-4768-a9ba-84bb3bc70564}"
+          Name="ahStoreroom" />
+        <ModelField
+          ID="{f4bb70af-49df-448a-a201-f7313e8cbe0d}"
+          Name="ahTask"
+          TextSize="64" />
+        <ModelField
+          ID="{ad7b3c4d-a52f-40a1-b5cf-f7b18069dcf3}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{b44bee8e-6877-4116-9684-ea3b7e62c7f3}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{ded8623a-86c4-415e-b7c4-75c4847fdb56}"
+          Name="ahBin"
+          TextSize="32" />
+        <ModelField
+          ID="{eb3f7316-856e-497a-902c-b657fb1c947e}"
+          Name="ahIdoKey"
+          TextSize="32" />
+        <ModelField
+          ID="{5d751715-190d-4061-9a4f-6f94d394fcfa}"
+          Name="ahIdoDelete"
+          TextSize="32" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{bcf87b8b-b5a4-402a-b8ae-440ef97a5978}"
+          Indexed="True"
+          IsParent="True"
+          Name="ahWorkOrderRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahMaterials" />
+        <ModelField
+          FieldType="Reference"
+          ID="{44704ad8-c051-4c42-93fd-8a3b71a6c254}"
+          Name="ahComponentRef"
+          ReferenceClass="AH_Component" />
+      </ModelClass>
+      <ModelClass
+        ID="{0f9ead75-bf01-4d76-8bb5-ba3bb76c82f8}"
+        Name="AH_WorkOrder">
+        <ModelField
+          CollectionClass="AH_WorkMaterial"
+          FieldType="Collection"
+          ID="{a0d35436-e962-43a5-b469-4f95d1a8c44a}"
+          Name="ahMaterials"
+          ReferenceParent="ahWorkOrderRef" />
+      </ModelClass>
+      <ModelClass
+        ID="{5f0677a2-c216-47c3-b641-f341d9c02580}"
+        Name="AH_Component" />
+    </ModelClasses>
+  </Model>
+  <PartialDataModelDependencies>
+    <Reference
+      Name="Work Orders"
+      RelPath="WorkOrders.pdm"
+      TargetID="{d330075a-993d-4731-9e51-0f6ff863a6c0}" />
+    <Reference
+      Name="Inventory"
+      RelPath="Inventory.pdm"
+      TargetID="{dad9c665-6f94-45d4-88a9-1b8efb688aac}" />
+  </PartialDataModelDependencies>
+</PartialDataModel>

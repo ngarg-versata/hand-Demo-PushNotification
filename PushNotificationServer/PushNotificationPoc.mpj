@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DesignerProject
+  DeployIC="False"
+  FileVersion="6.0.0.54"
+  GenerateCode="False"
+  GenerateDictCode="False" xmlns="http://hand.com/wmw-designer">
+  <Project
+    Name="PushNotificationPoc" xmlns="http://hand.com/AtHand.MPJ/1">
+    <ModelRef
+      RelPath="PushNotificationPoc.model" />
+    <DictRefs />
+    <RoleRefs />
+    <SymbolsRef
+      RelPath="PushNotificationPoc.syms" />
+    <UnitClassesRef
+      RelPath="Units\PushNotificationPoc.unit" />
+    <DictionaryGroups />
+    <PermissionsRef
+      RelPath="PushNotificationPoc.permissions" />
+    <ExternalFilesRef
+      RelPath="PushNotificationPoc.manifest" />
+    <UnitSetRefs />
+  </Project>
+  <DeviceProfileRefs
+    DefaultPPCProfile="Pocket PC (ARM)"
+    DefaultTabletProfile="Tablet PC" xmlns="http://hand.com/AtHand.MPJ/1">
+    <DeviceProfileRef
+      Name="MWC"
+      RelPath="Device Profiles\MWC.dprof" />
+    <DeviceProfileRef
+      Name="Pocket PC (ARM)"
+      RelPath="Device Profiles\Pocket PC (ARM).dprof" />
+    <DeviceProfileRef
+      Name="Tablet PC"
+      RelPath="Device Profiles\Tablet PC.dprof" />
+  </DeviceProfileRefs>
+  <TagsRef
+    RelPath="PushNotificationPoc.tags" xmlns="http://hand.com/AtHand.MPJ/1" />
+  <AliasMapRef
+    RelPath="PushNotificationPoc.amap" xmlns="http://hand.com/AtHand.MPJ/1" />
+  <PartialDataModelRefs xmlns="http://hand.com/AtHand.MPJ/1">
+    <PartialDataModelRef
+      Name="PushNotifications"
+      RelPath="Reference Models\PushNotifications.pdm"
+      TargetID="{6e99acc7-68cf-47bf-b0c8-91d54d548649}" />
+    <PartialDataModelRef
+      Name="System"
+      RelPath="Reference Models\System.pdm"
+      TargetID="{c061c71f-82a7-4532-b462-ca488b9b76e4}" />
+    <PartialDataModelRef
+      Name="Inventory"
+      RelPath="Reference Models\Inventory.pdm"
+      TargetID="{dad9c665-6f94-45d4-88a9-1b8efb688aac}" />
+    <PartialDataModelRef
+      Name="Materials"
+      RelPath="Reference Models\Materials.pdm"
+      TargetID="{9009040a-f7c5-4be4-9217-d26b6ad59654}" />
+    <PartialDataModelRef
+      Name="Scheduler"
+      RelPath="Reference Models\Scheduler.pdm"
+      TargetID="{d0070bfa-3a9b-4da4-8521-f0e3bd99ebde}" />
+    <PartialDataModelRef
+      Name="Work Orders"
+      RelPath="Reference Models\WorkOrders.pdm"
+      TargetID="{d330075a-993d-4731-9e51-0f6ff863a6c0}" />
+  </PartialDataModelRefs>
+  <ModuleRefs xmlns="http://hand.com/AtHand.MPJ/1" />
+  <StringMapRefs />
+</DesignerProject>

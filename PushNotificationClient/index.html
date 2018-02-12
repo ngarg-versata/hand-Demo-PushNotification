@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="githubViewer">
+
+  <head>
+    <title>Push Notification Client</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    <link href="Styles/bootstrap/css/bootstrap.css" rel="Stylesheet" />
+    <link href="Styles/Site.css" rel="Stylesheet"/>
+
+    <script type="text/javascript" src="Scripts/jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script type="text/javascript">
+      var dojoConfig = {
+        async: true,
+        baseUrl: '',
+        paths: {
+          src: "src",
+          app: "src/app",
+          dojo: "src/bower_components/dojo",
+          dojox: "src/bower_components/dojox",
+          dijit: "src/bower_components/dijit",
+          mdoApi: "src/bower_components/athand-mdojs/mdo"
+        }
+      };
+    </script>
+	  <script src="src/bower_components/dojo/dojo.js"></script>
+  </head>
+   <script>
+      require(["./src/main.js"]);
+    </script>
+</html>

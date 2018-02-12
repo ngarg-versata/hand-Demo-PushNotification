@@ -1,0 +1,24 @@
+{
+  "name": "athand-mdojs",
+  "version": "6.5.104",
+  "description": "JavaScript library for accessing the M-Tier Sync Service",
+  "main": "mdo.js",
+  "moduleType": [
+    "amd"
+  ],
+  "authors": [
+    "@hand Corporation"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "_release": "6.5.104",
+  "_resolution": {
+    "type": "version",
+    "tag": "6.5.104",
+    "commit": "c9c885d994610c08dfd094a7c0ec2beaee8b63a4"
+  },
+  "_source": "http://ausfmsdev01.hand.local/bonobo/athand-mdojs.git",
+  "_target": "6.5.104",
+  "_originalSource": "athand-mdojs"
+}

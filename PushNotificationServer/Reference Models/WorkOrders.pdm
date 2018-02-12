@@ -1,0 +1,2408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PartialDataModel
+  FileVersion="6.0.0.54"
+  ID="{d330075a-993d-4731-9e51-0f6ff863a6c0}"
+  Name="Work Orders" xmlns="http://hand.com/AtHand.MPJ/1">
+  <Model>
+    <ModelClasses>
+      <ModelClass
+        Comments="A physical place that Assets are maintained, stored and/or operated"
+        DistributionType="RuleBased"
+        Group="Assets"
+        ID="{5853d22a-0367-4dcb-9a9a-6667686a62e4}"
+        IsRootDefinition="True"
+        Name="AH_Location">
+        <ModelField
+          CollectionClass="AH_Asset"
+          FieldType="Collection"
+          ID="{1fc813cb-0776-417e-9d11-8add3a7f6e97}"
+          Name="ahAssets"
+          Ownership="False"
+          ReferenceParent="ahLocationRef" />
+        <ModelField
+          ID="{14d5a97d-0576-41d8-ba1e-02d57d8214b7}"
+          Indexed="True"
+          Name="ahLocation"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{59d57086-7e92-40a0-8c2c-f0abef08a393}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{022093be-8773-441e-adb8-f34db4580a94}"
+          Name="ahExType"
+          TextSize="64" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{c24647a4-e683-4b67-a607-69aaac46b121}"
+          IsParent="True"
+          Name="ahParentRef"
+          ReferenceClass="AH_Location"
+          ReferenceCollection="ahSubLocations" />
+        <ModelField
+          CollectionClass="AH_Location"
+          FieldType="Collection"
+          ID="{44c9d8aa-6b98-45f1-8ccb-99e36f49907b}"
+          Name="ahSubLocations"
+          ReferenceParent="ahParentRef" />
+        <ModelField
+          ID="{bdae4fc6-78ef-4d17-a7e4-2531aa87412a}"
+          Name="ahStatus"
+          TextSize="32" />
+        <ModelField
+          ID="{2ab37c9f-1f8a-4726-a622-633b7d38b19e}"
+          Name="ahType"
+          TextSize="32" />
+        <ModelField
+          ID="{a93b1639-502a-4e8f-a1da-9ae080801eb3}"
+          Name="ahName" />
+        <ModelField
+          Comments="Location Description"
+          ID="{7607a781-97a8-446d-81dd-d3d0d448b7c9}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{c3e21b65-45e4-47ed-b740-f24c50bf9a14}"
+          Name="ahAddress" />
+        <ModelField
+          ID="{cada54a5-736d-4f7d-89e7-4cdc26548c72}"
+          Name="ahClassStruct"
+          TextSize="32" />
+        <ModelField
+          ID="{370c95fa-417b-4caa-a2ed-8addc73f6ab6}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{2adca742-63fa-48bc-a78f-cfc80f747863}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{f899bdd6-ec22-4e76-b014-87fd8bcfee3b}"
+          Name="ahHasChildren" />
+        <ModelField
+          ID="{e006d63e-90e5-44da-80c0-64a94b4d8d5d}"
+          Name="ahLegalEntity"
+          TextSize="64" />
+        <ModelField
+          ID="{eb512579-826b-4317-8f71-900ce6f295cb}"
+          Indexed="True"
+          Name="ahIdoKey"
+          TextSize="64" />
+        <ModelField
+          ID="{1b7ecabb-f191-4e09-85f0-b30b210c9ee9}"
+          Name="ahIdoDelete"
+          TextSize="32" />
+        <ModelField
+          ID="{b4d62a4b-bd68-4185-9f8f-a36df75c9cdd}"
+          Name="ahExtendedDesc"
+          TextSize="512"
+          Virtual="True">
+          <DataValue
+            Type="Formula"
+            Value="{ELEMENT}#&quot;(&quot; &amp; $ahLocation &amp; &quot;) &quot; &amp; $ahDescription" />
+        </ModelField>
+        <ModelField
+          ID="{560ff713-e26b-4069-99a4-2875e54d76df}"
+          Name="ahAcctClass"
+          TextSize="64" />
+        <ModelField
+          ID="{418da25a-d0f7-486d-99cb-3305eee2fb4b}"
+          Name="ahAddress2" />
+        <ModelField
+          ID="{21cb2c6c-9115-4217-9809-a0e512de844c}"
+          Name="ahAddress3" />
+        <ModelField
+          ID="{56243028-59ff-4e82-ae66-aaa0bd6175e2}"
+          Name="ahAddress4" />
+        <ModelField
+          FieldType="Number"
+          ID="{22de59c4-6bbd-4043-a9ae-aaaa08142bef}"
+          Name="ahGpsLatitude"
+          NumberLength="9"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Number"
+          ID="{ee5415cd-4584-4531-864c-e6e83d3495e8}"
+          Name="ahGpsLongitude"
+          NumberLength="9"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{dca1c907-da67-4cab-9949-5f64bff39543}"
+          Name="ahAddress5" />
+      </ModelClass>
+      <ModelClass
+        Comments="A tangible and fixed item of value that is operated, managed and maintained by the organization"
+        DistributionType="RuleBased"
+        Group="Assets"
+        ID="{ec0a168b-1d7c-429c-a3aa-a5ac887f8c3c}"
+        IsRootDefinition="True"
+        Name="AH_Asset">
+        <ModelField
+          ID="{53c05993-bc21-4969-b52e-6f56c069fd6a}"
+          Indexed="True"
+          Name="ahAsset"
+          TextSize="32" />
+        <ModelField
+          ID="{2b9a26db-ea66-42f6-957b-5f022d26b29f}"
+          Name="ahExUid"
+          TextSize="32" />
+        <ModelField
+          ID="{bc8ff654-5f76-4a23-8c91-bed7d210f458}"
+          Name="ahExRowstamp"
+          TextSize="64" />
+        <ModelField
+          FieldType="Reference"
+          ID="{51538440-58d9-425a-b6cf-d42983353b2d}"
+          IsParent="True"
+          Name="ahParentRef"
+          ReferenceClass="AH_Asset"
+          ReferenceCollection="ahAssemblies" />
+        <ModelField
+          CollectionClass="AH_Asset"
+          FieldType="Collection"
+          ID="{8fe6a57d-b834-4fd3-878c-befb93bfb110}"
+          Name="ahAssemblies"
+          ReferenceParent="ahParentRef" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{2cfd500d-cdfd-4fe3-a680-d0dd7bbc389f}"
+          Indexed="True"
+          IsParent="True"
+          Name="ahLocationRef"
+          ReferenceClass="AH_Location"
+          ReferenceCollection="ahAssets" />
+        <ModelField
+          ID="{ba613365-bb99-4055-b0ec-ed2a9e90d2bd}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{a97f2697-a4f5-44a8-a960-a94ce2c7e6a3}"
+          Name="ahStatus"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{977e9d25-24a0-4be6-bca1-bac0707cc884}"
+          Name="ahStatusTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Memo"
+          ID="{3851fae3-a215-4382-8258-6eea8867154b}"
+          Name="ahMemo" />
+        <ModelField
+          ID="{bc832922-2833-4f99-b8ce-800b3a120977}"
+          Name="ahSerialNum"
+          TextSize="64" />
+        <ModelField
+          ID="{e4792a83-bef0-498c-b283-c79469e80b48}"
+          Name="ahModelNum"
+          TextSize="40" />
+        <ModelField
+          ID="{44ac1e9b-3227-473b-9071-c64f3faabc35}"
+          Name="ahManufacturer"
+          TextSize="100" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{d726887d-54f2-43e4-86fa-2418890a6028}"
+          Name="ahInstallDate"
+          TimestampType="Date" />
+        <ModelField
+          ID="{9d4de1b1-54c2-44b5-a2ac-8eba965ecd7a}"
+          Name="ahStoreroom"
+          TextSize="32" />
+        <ModelField
+          ID="{479077f5-f5a7-4e8d-aac8-7eda051008f6}"
+          Name="ahStoreroomLoc"
+          TextSize="32" />
+        <ModelField
+          ID="{92ba669c-8424-4516-afdf-9a14b4fd5d19}"
+          Name="ahFailureClass"
+          TextSize="32" />
+        <ModelField
+          ID="{4580257f-5ee3-4dd2-9e63-6054534dea36}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{3ab8f0b9-8844-4df9-89ab-ebed8c2820a4}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          Comments="Unique key used for IDO"
+          ID="{33183687-dc6d-4bea-8bd5-46a204467df0}"
+          Indexed="True"
+          Name="ahIdoKey"
+          TextSize="64" />
+        <ModelField
+          ID="{cbe44e77-3187-4d46-b9d1-4ccca97498f2}"
+          Name="ahIdoDelete"
+          TextSize="32" />
+        <ModelField
+          ID="{18fc95ea-e6fe-4783-8335-76fa0055b728}"
+          Name="ahType"
+          TextSize="32" />
+        <ModelField
+          ID="{ec4a565d-037c-4cf5-94ce-7110eb966a26}"
+          Name="ahExtendedDesc"
+          TextSize="512"
+          Virtual="True">
+          <DataValue
+            Type="Formula"
+            Value="{ELEMENT}#&quot;(&quot; &amp; $ahAsset &amp; &quot;) &quot; &amp; $ahDescription" />
+        </ModelField>
+        <ModelField
+          FieldType="Number"
+          ID="{0b11bd27-0180-4dca-8c41-5bdaced04970}"
+          Name="ahExId"
+          NumberType="Int32" />
+        <ModelField
+          CollectionClass="AH_AssetXferSummary"
+          FieldType="Collection"
+          ID="{8d3c9898-01a6-4e64-8206-e86064d41bea}"
+          Name="ahXfers"
+          ReferenceParent="ahAssetRef" />
+        <ModelField
+          CollectionClass="AH_AssetProp"
+          FieldType="Collection"
+          ID="{b96300d2-5e4f-4d1c-abf5-2e027dadaa0e}"
+          Name="ahAttributes"
+          ReferenceParent="ahAssetRef" />
+        <ModelField
+          CollectionClass="AH_AssetMeter"
+          FieldType="Collection"
+          ID="{b5e583ef-8f20-4f82-a5f1-69e821d284a5}"
+          Name="ahAssetMeters"
+          ReferenceParent="ahAssetRef" />
+        <ModelField
+          CollectionClass="AH_AssetHistory"
+          FieldType="Collection"
+          ID="{c39420d5-8f44-451e-b6ef-e2e3513de013}"
+          Name="ahHistory"
+          ReferenceParent="ahAssetRef" />
+        <ModelField
+          CollectionClass="AH_AssetDoc"
+          FieldType="Collection"
+          ID="{18e8ac27-1987-4ff9-976a-9b81a2e2455d}"
+          Name="ahDocuments"
+          ReferenceParent="ahAssetRef" />
+        <ModelField
+          CollectionClass="AH_MeasPoint"
+          FieldType="Collection"
+          ID="{e89c6b3a-06d0-43bf-8c8f-2b9ef6a1cafa}"
+          Name="ahMeasPoints"
+          ReferenceParent="ahAssetRef" />
+        <ModelField
+          ID="{b555ce55-03fe-4e45-aac6-62009daca71b}"
+          Name="ahModel"
+          TextSize="100" />
+        <ModelField
+          CollectionClass="AH_AssetLog"
+          FieldType="Collection"
+          ID="{9cbbc862-40c1-4f36-89a3-cc2c07b386d6}"
+          Name="ahAssetLogs"
+          ReferenceParent="ahAssetRef" />
+      </ModelClass>
+      <ModelClass
+        DistributionType="RuleBased"
+        Group="Maintenance"
+        ID="{0f9ead75-bf01-4d76-8bb5-ba3bb76c82f8}"
+        IsRootDefinition="True"
+        Name="AH_WorkOrder">
+        <ModelField
+          FieldID="2"
+          ID="{b0ce990e-1465-4906-a9a0-3890d4b6f189}"
+          Indexed="True"
+          Name="ahWorkOrder"
+          TextSize="16" />
+        <ModelField
+          FieldID="88"
+          FieldType="Number"
+          ID="{36581b1b-aa11-4e91-89b5-d56ec6e4065e}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          FieldID="110"
+          ID="{a6fe3a2e-7f4f-4093-9ede-f138ef9065a7}"
+          Name="ahVendor"
+          TextSize="32" />
+        <ModelField
+          FieldID="9"
+          FieldType="Reference"
+          ID="{e080b9e2-17db-445a-89f7-385242651dd4}"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset" />
+        <ModelField
+          FieldID="8"
+          FieldType="Reference"
+          ID="{29b2f3cb-b706-40ce-9985-8dfda68ef7a6}"
+          Name="ahLocationRef"
+          ReferenceClass="AH_Location" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldID="52"
+          FieldType="Reference"
+          ID="{41794a66-6882-477b-a4df-995dbe042c26}"
+          IsParent="True"
+          Name="ahParentRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahChildOrders" />
+        <ModelField
+          FieldID="94"
+          ID="{1f8885fb-9def-4486-9d77-5492cf15aeed}"
+          Name="ahClass"
+          TextSize="16" />
+        <ModelField
+          FieldID="3"
+          ID="{da405083-4ee3-4580-a673-0f7e15ae4942}"
+          Name="ahType"
+          TextSize="32" />
+        <ModelField
+          FieldID="17"
+          FieldType="Number"
+          ID="{cb52bebb-c563-4c28-a95b-0cc8b9609749}"
+          Name="ahPriority"
+          NumberType="Int32" />
+        <ModelField
+          FieldID="192"
+          ID="{80eeb696-ca49-4a28-97c9-8ca4a86c0b21}"
+          Name="ahDepartment"
+          TextSize="64" />
+        <ModelField
+          FieldID="203"
+          ID="{d720f3ba-3bd0-48bc-8c72-7c3f87e0369d}"
+          Name="ahRespPerson"
+          TextSize="64" />
+        <ModelField
+          FieldID="194"
+          ID="{e7c5d38c-4c56-41b9-bcf5-83b26f2941c3}"
+          Name="ahAccount"
+          TextSize="64" />
+        <ModelField
+          FieldID="7"
+          ID="{564683d1-d3ce-4a57-9ebb-7e5a38f469d9}"
+          Name="ahDescription" />
+        <ModelField
+          FieldID="115"
+          ID="{6e0f9e03-9fa9-4535-aa10-fb588cc3401e}"
+          Name="ahPm"
+          TextSize="32" />
+        <ModelField
+          FieldID="20"
+          ID="{d8ab9a6f-ab15-41b5-8161-5d27bc91a9fc}"
+          Name="ahJobPlan"
+          TextSize="32" />
+        <ModelField
+          FieldID="196"
+          ID="{a93bc887-7d3b-4973-8b0c-d1ddc1c43848}"
+          Name="ahTemplate"
+          TextSize="32" />
+        <ModelField
+          FieldID="15"
+          ID="{494249a9-6fdc-4bd7-8aa5-0166d99795c6}"
+          Name="ahStatus"
+          TextSize="16" />
+        <ModelField
+          FieldID="105"
+          FieldType="Timestamp"
+          ID="{9a45fc0b-be5f-45b8-aaed-409cf212c331}"
+          Name="ahStatusTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="22"
+          FieldType="Timestamp"
+          ID="{3f047075-e4d6-41b5-befd-4e75a5c1a281}"
+          Name="ahTargetStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="23"
+          FieldType="Timestamp"
+          ID="{225226c1-816d-46ff-8f90-cd46eb1ca55f}"
+          Name="ahTargetFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="54"
+          FieldType="Timestamp"
+          ID="{13efd882-16a1-46a4-82ca-9f05338396cc}"
+          Name="ahSchedStartTs"
+          TimestampType="DateTime" />
+        <ModelField
+          FieldID="55"
+          FieldType="Timestamp"
+          ID="{1bae8f7d-e42b-4536-8f23-6cf0190eaec7}"
+          Name="ahSchedFinishTs"
+          TimestampType="DateTime" />
+        <ModelField
+          FieldID="30"
+          FieldType="Timestamp"
+          ID="{44da7834-5e58-49fa-a650-c840dd67c225}"
+          Name="ahActualStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="31"
+          FieldType="Timestamp"
+          ID="{c04df9ad-9998-4ab4-b62e-12ffff8c541a}"
+          Name="ahActualFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="190"
+          ID="{7fd895dc-8d16-464b-aea5-0d2440157554}"
+          Name="ahFailure"
+          TextSize="32" />
+        <ModelField
+          FieldID="191"
+          ID="{121b1e4c-d6cc-4acd-adf2-aadef69d85fa}"
+          Name="ahProblem"
+          TextSize="32" />
+        <ModelField
+          FieldID="97"
+          ID="{59f13981-eef6-4e0b-8dae-429ee92df403}"
+          Name="ahCause"
+          TextSize="32" />
+        <ModelField
+          FieldID="98"
+          ID="{999f8eba-516f-4232-9791-9a1413c21481}"
+          Name="ahRemedy"
+          TextSize="32" />
+        <ModelField
+          FieldID="24"
+          ID="{ca45741b-b1ef-4861-9311-56528e7d781d}"
+          Name="ahReptBy"
+          TextSize="64" />
+        <ModelField
+          FieldID="26"
+          FieldType="Timestamp"
+          ID="{5e46077e-3a35-45bb-a36f-44345690bb4a}"
+          Name="ahReptDate"
+          TimestampType="DateTime" />
+        <ModelField
+          FieldID="75"
+          ID="{fc95607d-00b8-4d03-8685-70709f1e435c}"
+          Name="ahSupervisor"
+          TextSize="30" />
+        <ModelField
+          FieldID="195"
+          ID="{ede49dc9-c13f-4ee9-b9a4-91da5a354e7d}"
+          Name="ahCreatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldID="176"
+          FieldType="Timestamp"
+          ID="{c4afcde7-3c16-40dc-b5dc-7d6c8850abc1}"
+          Name="ahCreatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="67"
+          ID="{877d8756-d478-4e15-bed2-e91c5c0bf7c3}"
+          Name="ahUpdatedBy"
+          TextSize="30" />
+        <ModelField
+          FieldID="66"
+          FieldType="Timestamp"
+          ID="{17533ee9-71b1-4d4b-a73b-80d87a73dcfe}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="102"
+          ID="{43b2782f-b00c-4ff9-8d87-73dc120dcd4c}"
+          Name="ahProcessBy"
+          TextSize="32" />
+        <ModelField
+          FieldID="100"
+          ID="{2e2fd724-9cb3-47df-adc2-3683007dfdf1}"
+          Name="ahProcessStatus"
+          TextSize="32" />
+        <ModelField
+          FieldID="101"
+          FieldType="Timestamp"
+          ID="{a80d4bc3-49d0-494b-98d5-5bdd1b7acc5b}"
+          Name="ahProcessTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="64"
+          FieldType="Boolean"
+          ID="{c98c2e17-23d2-4088-8617-72470276e704}"
+          Name="ahHasChildren" />
+        <ModelField
+          FieldID="69"
+          FieldType="Boolean"
+          ID="{fc9af486-f484-4157-aac8-5145fa74654b}"
+          Name="ahHasFollowup" />
+        <ModelField
+          Comments=""
+          FieldID="129"
+          ID="{71d1eea2-d84a-4dbf-959d-02673c71be70}"
+          Name="ahIdoKey"
+          TextSize="32" />
+        <ModelField
+          FieldID="109"
+          ID="{048f80d2-8f2f-46a9-b9b9-635b814654de}"
+          Name="ahIdoDelete"
+          TextSize="32" />
+        <ModelField
+          CollectionClass="AH_WorkJournal"
+          FieldID="51"
+          FieldType="Collection"
+          ID="{2f7dc90a-000d-42ef-85dd-e20e57f22fd9}"
+          Name="ahJournalEntries"
+          Ownership="False"
+          PartialDataModelID="{d330075a-993d-4731-9e51-0f6ff863a6c0}"
+          ReferenceParent="ahWorkOrderRef" />
+        <ModelField
+          CollectionClass="AH_WorkDoc"
+          FieldID="87"
+          FieldType="Collection"
+          ID="{bd750777-78d3-48ad-a432-f3dfc853087f}"
+          Name="ahDocuments"
+          PartialDataModelID="{d330075a-993d-4731-9e51-0f6ff863a6c0}"
+          ReferenceParent="ahWorkOrderRef" />
+        <ModelField
+          CollectionClass="AH_LaborXact"
+          FieldID="50"
+          FieldType="Collection"
+          ID="{d1fb83e6-953b-4c48-b68d-83287fa5e99a}"
+          Name="ahLaborXacts"
+          PartialDataModelID="{d330075a-993d-4731-9e51-0f6ff863a6c0}"
+          ReferenceParent="ahWorkOrderRef" />
+        <ModelField
+          CollectionClass="AH_WorkOrder"
+          FieldID="93"
+          FieldType="Collection"
+          ID="{0ffc40f9-00a5-4a5a-b9cd-528e52e9539f}"
+          Name="ahChildOrders"
+          ReferenceParent="ahParentRef" />
+        <ModelField
+          CollectionClass="AH_FailureReport"
+          FieldID="103"
+          FieldType="Collection"
+          ID="{1a8dcd1b-89cc-4dc9-aced-9864e060e23f}"
+          Name="ahFailureReports"
+          ReferenceParent="ahWorkOrderRef" />
+        <ModelField
+          CollectionClass="AH_WorkLog"
+          FieldID="181"
+          FieldType="Collection"
+          ID="{7568ec1f-5c2c-4e13-967c-7b728bbd33f0}"
+          Name="ahWorkLogs"
+          ReferenceParent="ahWorkOrderRef" />
+        <ModelField
+          CollectionClass="AH_Task"
+          FieldType="Collection"
+          ID="{f5f29339-5cf5-4048-a47c-6d76174761b7}"
+          Name="ahTasks"
+          ReferenceParent="ahWorkOrderRef" />
+        <ModelField
+          CollectionClass="AH_WorkAsset"
+          FieldType="Collection"
+          ID="{d550b766-288b-42c3-958d-332dcd196e3c}"
+          Name="ahAssets"
+          ReferenceParent="ahWorkOrderRef" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{fa45df4c-dc0d-4f96-ac69-736da2104bc9}"
+          Name="ahReportedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{185bb264-0e51-47cf-8c20-0520c9a04106}"
+          Name="ahIsService" />
+        <ModelField
+          CollectionClass="AH_WorkAssign"
+          FieldType="Collection"
+          ID="{aa85957b-969a-44ca-be80-63894bc45bff}"
+          Name="ahAssignments"
+          Ownership="False"
+          ReferenceParent="ahWorkOrderRef" />
+        <ModelField
+          FieldType="Memo"
+          ID="{c984fc6c-20da-4ee6-9892-9caf0d1c9e29}"
+          Name="ahLongDesc" />
+      </ModelClass>
+      <ModelClass
+        ClassType="DataClass"
+        DistributionType="ConnectionBased"
+        Group="Maintenance"
+        ID="{d6512612-e34a-48ba-aca9-3954a9823f7f}"
+        IsRootDefinition="True"
+        Name="AH_WorkSummary">
+        <ModelField
+          FieldID="2"
+          FieldType="Text"
+          ID="{cc764d1a-54d4-426e-a128-9a15bf449f04}"
+          Name="ahWorkOrder"
+          TextSize="32" />
+        <ModelField
+          FieldID="55"
+          FieldType="Number"
+          ID="{f5a222fa-0c91-4dfa-8e4f-1c1551bf585f}"
+          Indexed="False"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          FieldID="5"
+          ID="{08a77181-736e-4b88-9b14-1c99c7ae0f47}"
+          Name="ahStatus"
+          TextSize="32" />
+        <ModelField
+          FieldID="60"
+          ID="{3f650855-c8f0-4360-9c3a-dde22de73664}"
+          Name="ahWorkType"
+          TextSize="64" />
+        <ModelField
+          FieldID="36"
+          FieldType="Text"
+          ID="{c81933e8-6ed7-44cf-90cb-a138c7362b30}"
+          Name="ahAsset"
+          TextSize="32" />
+        <ModelField
+          FieldID="37"
+          FieldType="Text"
+          ID="{88fc7268-b947-4c3d-b5e2-2ba1e0c3632b}"
+          Name="ahAssetDesc" />
+        <ModelField
+          FieldID="7"
+          FieldType="Text"
+          ID="{88670d4c-5b6c-4ebb-8fa1-2b1da1a40fd8}"
+          Name="ahDescription" />
+        <ModelField
+          FieldID="59"
+          FieldType="Text"
+          ID="{5d21f5a4-ca9d-4646-b066-336e4cb913ad}"
+          Indexed="False"
+          Name="ahLongDesc"
+          TextSize="4000" />
+        <ModelField
+          FieldID="34"
+          ID="{c104f78f-ec36-44ad-aa3a-9f272843c6f8}"
+          Name="ahLocation"
+          TextSize="32" />
+        <ModelField
+          FieldID="35"
+          FieldType="Text"
+          ID="{0a8aca39-e3d1-4f79-9ba3-6aca9390e480}"
+          Name="ahLocationDesc" />
+        <ModelField
+          FieldID="43"
+          FieldType="Number"
+          ID="{1c2291f3-6791-4e4e-8ee1-347cfc9b1a2e}"
+          Name="ahPriority"
+          NumberType="Int32" />
+        <ModelField
+          FieldID="58"
+          FieldType="Text"
+          ID="{28c0094f-611e-4c6c-9f2a-b50f7bd46539}"
+          Indexed="False"
+          Name="ahDepartment"
+          TextSize="64" />
+        <ModelField
+          FieldID="46"
+          FieldType="Timestamp"
+          ID="{868f5fbe-8c1c-487e-9123-1b0fedea9a82}"
+          Name="ahTargetStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="47"
+          FieldType="Timestamp"
+          ID="{1dcb3966-facb-4cdf-916e-220f358e236c}"
+          Name="ahTargetFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="48"
+          FieldType="Timestamp"
+          ID="{5e8d93dd-852c-4b1e-9525-216a2d7740db}"
+          Name="ahActualStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="49"
+          FieldType="Timestamp"
+          ID="{3dcbfc44-9f15-4622-9a8e-fcfe32501214}"
+          Name="ahActualFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="56"
+          FieldType="Text"
+          ID="{6367dad0-9aae-47e0-9af6-9b54129f5961}"
+          Indexed="False"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldID="57"
+          FieldType="Timestamp"
+          ID="{530d299f-3f80-4b48-9b8d-d00f02204238}"
+          Indexed="False"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="52"
+          FieldType="Text"
+          ID="{7b646d5c-816b-4ca6-8498-205a1dda2e32}"
+          Name="ahPm"
+          TextSize="32" />
+        <ModelField
+          FieldID="53"
+          FieldType="Text"
+          ID="{24d6731d-2314-4872-a639-b00deea3e6fe}"
+          Indexed="False"
+          Name="ahJobPlan"
+          TextSize="32" />
+        <ModelField
+          FieldID="40"
+          FieldType="Text"
+          ID="{e9ea3077-6567-462e-af9a-4fa741305a42}"
+          Indexed="False"
+          Name="ahIdoDelete"
+          TextSize="32" />
+        <ModelField
+          FieldID="39"
+          FieldType="Text"
+          ID="{8498456f-da6b-4c68-b7a6-3247b56c19c4}"
+          Indexed="False"
+          Name="ahIdoKey"
+          TextSize="32" />
+        <ModelField
+          ID="{783a0f3c-50f0-4f95-bdc1-e594d3f447d8}"
+          Name="ahReptBy"
+          TextSize="64" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{352bcac0-d322-4352-b272-ccc069feda87}"
+          Name="ahReportedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{d7c5c360-01aa-4196-832a-76c3d16a5d59}"
+          Name="ahSchedStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{c22dea42-98de-46c2-aa63-47583fa32f97}"
+          Name="ahSchedFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{07fef518-b08d-4a6c-83fa-d37cf36c7503}"
+          Name="ahFailure"
+          TextSize="32" />
+        <ModelField
+          ID="{3e8b61b4-2391-496a-9bec-eeabe082f1cb}"
+          Name="ahProblem"
+          TextSize="32" />
+        <ModelField
+          ID="{5460bc1a-5f08-4325-94c0-b647e0e5f6de}"
+          Name="ahCause"
+          TextSize="32" />
+        <ModelField
+          ID="{b080f41f-53e5-4a3c-8ea4-ab6108773cfa}"
+          Name="ahRemedy"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        Group="Maintenance"
+        ID="{a0cd3346-1d7f-443b-9b54-1daa1fc3572b}"
+        IsRootDefinition="True"
+        Name="AH_OpReading">
+        <ModelField
+          ID="{35ee25f8-3fb4-4440-aad9-488692d02eb8}"
+          Name="ahEnteredBy" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{d5326d0c-f328-442e-af1b-df8e9c3273f1}"
+          Name="ahEnteredTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{ed31fc41-cace-4f04-b579-0a96c6249322}"
+          Name="ahInspector"
+          TextSize="32" />
+        <ModelField
+          FieldID="33"
+          FieldType="Number"
+          ID="{f4ef82d5-346b-4cbc-b537-47bc3cf5314f}"
+          Name="ahDelta"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{600dd580-2dcc-4bac-83e4-354a8b5308d8}"
+          Name="ahIsRollover" />
+        <ModelField
+          ID="{8c769222-b458-4213-9a10-3503b2695912}"
+          Name="ahObservation"
+          TextSize="32" />
+        <ModelField
+          ID="{965faad4-8ab3-4910-b227-a22af404dc92}"
+          Name="ahProcessBy"
+          TextSize="64" />
+        <ModelField
+          ID="{c017fe3e-5af2-4a8f-ade6-29e5fb590b97}"
+          Name="ahProcessStatus"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{9a38c9b4-31e2-4e53-ad48-99cbb12e86f2}"
+          Name="ahProcessTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Number"
+          ID="{eb6d2502-9c70-4f83-b34b-4da8f688d83d}"
+          Name="ahReading"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{fe8f90b4-bbb6-43a9-9bd4-121b62e5531a}"
+          Name="ahReadingTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{25125482-ac43-4787-b680-58298ef307a2}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{de03ca94-554d-4506-a6c0-38542feab4d9}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Reference"
+          ID="{01bc183f-380d-407e-8b2f-02c3406f9fdc}"
+          Name="ahMeasPointRef"
+          ReferenceClass="AH_MeasPoint" />
+        <ModelField
+          FieldType="Reference"
+          ID="{2cb4c68d-df01-4411-8323-d740eb5f10fe}"
+          Name="ahTaskRef"
+          ReferenceClass="AH_Task" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{b9d31fac-f427-4c74-842d-ecc6e773a5b2}"
+          IsParent="True"
+          Name="ahAssetMeterRef"
+          ReferenceClass="AH_AssetMeter"
+          ReferenceCollection="ahMeterReadings" />
+      </ModelClass>
+      <ModelClass
+        Comments="A defined performance metric that can be recorded for a particular Asset or Location"
+        Group="Assets"
+        ID="{c332be15-34a2-43cf-9dfd-c5c1af8c54fd}"
+        IsRootDefinition="True"
+        Name="AH_MeasPoint">
+        <ModelField
+          FieldType="Reference"
+          ID="{d09b2979-e0e6-4384-b7c6-327af29b64d4}"
+          IsParent="True"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset"
+          ReferenceCollection="ahMeasPoints" />
+        <ModelField
+          ID="{fa94b705-6e9e-48e0-949f-ac85c8373bcd}"
+          Name="ahMeasPoint"
+          TextSize="32" />
+        <ModelField
+          FieldType="Reference"
+          ID="{c604290f-6894-4a6a-ae34-40db8ff7f667}"
+          Name="ahMeterRef"
+          ReferenceClass="AH_Meter" />
+        <ModelField
+          FieldType="Number"
+          ID="{04a6bf8b-a828-4ac5-81c2-b45d8a1231e8}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{4d245eba-425c-4ef6-84eb-b54e28eea1d8}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{ad17d77f-b096-41e9-8c81-984d795a7915}"
+          Name="ahExSite"
+          TextSize="32" />
+        <ModelField
+          ID="{da518f66-49f0-4a3b-a097-2e78c6581b3a}"
+          Name="ahUom"
+          TextSize="32" />
+        <ModelField
+          ID="{f430f887-acf4-4277-8e78-6bcd32a34b86}"
+          Name="ahDomain"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{2c5c58bd-e23d-41f9-9720-5a1abef9d99a}"
+          Name="ahLowerAction"
+          NumberLength="15"
+          NumberPrecision="3"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Number"
+          ID="{342900b1-fb96-4e04-9820-462aa52958dd}"
+          Name="ahLowerWarning"
+          NumberLength="15"
+          NumberPrecision="3"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Number"
+          ID="{99935a73-3da4-4194-ab40-c3d714c85aac}"
+          Name="ahUpperWarning"
+          NumberLength="15"
+          NumberPrecision="3"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Number"
+          ID="{3a34a876-c39d-4d7a-978b-e9f2fe8a1744}"
+          Name="ahUpperAction"
+          NumberLength="15"
+          NumberPrecision="3"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{877e7071-1b19-437f-b875-d47733f32659}"
+          Name="ahIdoKey"
+          TextSize="64" />
+        <ModelField
+          ID="{7c5cdcdd-de7d-436e-a61f-193b512272a6}"
+          Name="ahExRowstamp"
+          TextSize="12" />
+      </ModelClass>
+      <ModelClass
+        Group="Maintenance"
+        ID="{96c9d414-0473-4ccb-bb72-b6be54a577b7}"
+        IsRootDefinition="True"
+        Name="AH_Task">
+        <ModelField
+          ID="{db3394a9-ec1b-45f7-83ff-b73f7bacec62}"
+          Name="ahIdoKey"
+          TextSize="32" />
+        <ModelField
+          FieldID="103"
+          FieldType="Number"
+          ID="{f018b737-077b-4c50-ac7f-1a3c8a14f822}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{22d9b495-3873-4451-a79e-bfafb534852d}"
+          Indexed="True"
+          Name="ahTask"
+          TextSize="32" />
+        <ModelField
+          FieldID="93"
+          ID="{a59f440f-5e5c-48f3-9a31-aaff32baace8}"
+          Name="ahMeasInspector"
+          TextSize="32" />
+        <ModelField
+          FieldID="92"
+          ID="{0f518e4e-27df-4ab8-a26b-3413d71e1f74}"
+          Name="ahMeasObservation"
+          TextSize="50" />
+        <ModelField
+          FieldType="Reference"
+          ID="{8ef2420b-9c74-475f-ac95-d3d3c7852c38}"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{09df9945-c6c6-4d09-93dc-1854294f181d}"
+          IsParent="True"
+          Name="ahWorkOrderRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahTasks" />
+        <ModelField
+          FieldType="Reference"
+          ID="{6d613e6d-963f-470f-a141-29c1aaa8108f}"
+          Name="ahMeasPointRef"
+          ReferenceClass="AH_MeasPoint" />
+        <ModelField
+          FieldType="Reference"
+          ID="{8e2f5217-ed35-4907-8d6c-a8eadb29a81f}"
+          Name="ahOpReadingRef"
+          ReferenceClass="AH_OpReading" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{9dc3bbe0-8977-4865-8231-45b5ba07cd1a}"
+          Name="ahStatusTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{eafa0540-a6d0-44e8-ba22-4ec8b1a9b49e}"
+          Name="ahDescription" />
+        <ModelField
+          FieldType="Number"
+          ID="{0320c888-8bf6-443c-8981-72395bcb70c3}"
+          Name="ahSequence"
+          NumberType="Int32" />
+        <ModelField
+          ID="{41e4d416-ade0-4780-abf7-ab0df15061c7}"
+          Name="ahProblemCode"
+          TextSize="8" />
+        <ModelField
+          ID="{ff9affaf-a2e1-4ab0-882d-8f2e6bce198b}"
+          Name="ahDepartment"
+          TextSize="64" />
+        <ModelField
+          ID="{9f5e0da5-bd92-4ffe-bcbe-04fe4c06a38d}"
+          Name="ahAssigned"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{8405815f-85c4-4466-923f-336c5aa3b6c3}"
+          Name="ahActualStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{8c4d85bb-0860-42d1-8f44-7358de5e55fb}"
+          Name="ahActualFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{77c91981-3699-4ba6-a48c-65d5cfd2b20b}"
+          Name="ahExRowstamp"
+          TextSize="40" />
+        <ModelField
+          ID="{2b373825-19a8-4ed4-920b-01654f0c8bdb}"
+          Name="ahUpdatedBy"
+          TextSize="20" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{c801c8bf-b552-4cca-aa0e-b1269d796706}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{bc58c3fe-cc73-4dc0-b020-0c30237a4051}"
+          Name="ahIsTaskDone" />
+        <ModelField
+          ID="{70d699f2-14a1-42ce-8f50-180894efc0b4}"
+          Name="ahStatus"
+          TextSize="16" />
+        <ModelField
+          ID="{582f4f40-dd8e-4a99-b3e7-904205e25140}"
+          Name="ahProcessStatus"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{ddd983eb-9fad-478e-a97a-df3ee3187d19}"
+          Name="ahProcessTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{d173582d-5187-49c3-bbc2-20c1c3c85028}"
+          Name="ahProcessBy"
+          TextSize="32" />
+        <ModelField
+          ID="{3961360e-059b-4098-bd87-a7a4e9e9005b}"
+          Name="ahMeasValue1"
+          TextSize="25" />
+        <ModelField
+          ID="{244df676-76d3-4c18-80d1-cf5402183142}"
+          Name="ahValue1Indicat"
+          TextSize="1" />
+        <ModelField
+          ID="{70f528a3-5bc3-44c4-a91f-349bbe53f425}"
+          Name="ahValue2Indicat"
+          TextSize="1" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{014f3767-00f8-41e8-9aba-36c418013418}"
+          Name="ahMeasDate"
+          TimestampType="Timestamp" />
+        <ModelField
+          CollectionClass="AH_WorkLog"
+          FieldType="Collection"
+          ID="{7d5d7622-59ee-471b-b20d-9384cc4fb78f}"
+          Name="ahWorkLogs"
+          ReferenceParent="ahTaskRef" />
+        <ModelField
+          CollectionClass="AH_WorkJournal"
+          FieldType="Collection"
+          ID="{cd12b73d-2eec-4913-b740-f451f24cf853}"
+          Name="AH_WorkJournals"
+          Ownership="False"
+          ReferenceParent="ahTaskRef" />
+        <ModelField
+          FieldType="Memo"
+          ID="{e7006f86-11ec-4e11-856e-2b753c5b1482}"
+          Name="ahLongDesc" />
+      </ModelClass>
+      <ModelClass
+        Group="Assets"
+        ID="{e1c541db-2c4b-40c5-8460-6ca3cfe56587}"
+        IsRootDefinition="True"
+        Name="AH_AssetMeter">
+        <ModelField
+          CollectionClass="AH_OpReading"
+          FieldType="Collection"
+          ID="{74ac7f09-8a39-435c-ba67-a0a255f9b5b0}"
+          Name="ahMeterReadings"
+          ReferenceParent="ahAssetMeterRef" />
+        <ModelField
+          FieldType="Reference"
+          ID="{48e52314-94b7-4787-99fd-c5ba76bdf135}"
+          Indexed="True"
+          Name="ahMeterRef"
+          ReferenceClass="AH_Meter" />
+        <ModelField
+          FieldType="Reference"
+          ID="{6dcf31d6-a708-4176-91fd-5d60e55ea3f3}"
+          Indexed="True"
+          IsParent="True"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset"
+          ReferenceCollection="ahAssetMeters" />
+        <ModelField
+          FieldType="Number"
+          ID="{30df9aba-e281-409c-a00b-a3bef29f6945}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{ad1b7932-0fbd-4274-872b-4822c01cdb76}"
+          Name="ahActive" />
+        <ModelField
+          ID="{c54ad14f-9705-4439-90c7-bc9be26df4f2}"
+          Name="ahMeasUnit"
+          TextSize="16" />
+        <ModelField
+          FieldType="Number"
+          ID="{b4716bb0-8196-4176-a46f-b190ae751fc4}"
+          Name="ahRollover"
+          NumberLength="15"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{4748480d-9324-43fd-94fa-be4bca04eef6}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{f72aff47-733e-43f2-a0d4-7b2868044730}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{832ada24-2b28-4bd9-a2be-a7577329f955}"
+          Name="ahLastReadingTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{ce0618ea-5532-47cf-8092-42313c9692e1}"
+          Name="ahLastReading"
+          TextSize="32" />
+        <ModelField
+          ID="{c9fc6de0-65f9-46c9-a9c3-a910fe9bed1a}"
+          Name="ahReadingType"
+          TextSize="10" />
+        <ModelField
+          FieldType="Number"
+          ID="{f7f06e27-02b7-4d6f-a4e5-66dbe61c5d7f}"
+          Name="ahSequence"
+          NumberType="Int32" />
+      </ModelClass>
+      <ModelClass
+        Group="Assets"
+        ID="{7b11e81e-d2c4-46b8-9319-c3486de26836}"
+        IsRootDefinition="True"
+        Name="AH_AssetDoc">
+        <ModelField
+          FieldType="Timestamp"
+          ID="{e648edb7-dac3-4b4f-b93c-eefbae4e2e3a}"
+          Name="ahChangedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{109d67e3-2967-44df-9aff-90c88bde4813}"
+          Name="ahCreatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Number"
+          ID="{f7c2f43a-491c-473f-aecf-0e6a6fc34f80}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{55acf8d5-804d-468b-b4de-79c7e062645d}"
+          Name="ahProcessStatus"
+          TextSize="30" />
+        <ModelField
+          FieldType="Reference"
+          ID="{41a4cd74-07ba-4917-bf56-61f7c1d27fd2}"
+          Name="ahDocumentRef"
+          ReferenceClass="AH_Document" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{f0c0a1c4-e0a8-4b94-b200-ce823e4ab938}"
+          IsParent="True"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset"
+          ReferenceCollection="ahDocuments" />
+      </ModelClass>
+      <ModelClass
+        Comments="A shared measurement type that can be referenced by a Measurement Point of an Asset or Location"
+        Group="Assets"
+        ID="{5bbe3b44-b0a9-4495-ae37-9f8ca106a029}"
+        IsRootDefinition="True"
+        Name="AH_Meter">
+        <ModelField
+          ID="{e8267017-ae45-4120-aeba-9d6be092aaf1}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{579955ec-0804-4fbb-a04b-53dcfebd1800}"
+          Name="ahDomainId"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{0436b35a-0dc3-4c9b-9150-f24ce055c520}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{8d5eeccd-3fbd-4488-8d8d-3a40f79906e7}"
+          Name="ahMeasUnit"
+          TextSize="32" />
+        <ModelField
+          ID="{cebbb606-3abc-4eb8-8e1c-b7274fdb5eb6}"
+          Name="ahMeterName"
+          TextSize="32" />
+        <ModelField
+          ID="{97628ac6-aa16-4c32-858c-cbde9a9c54d7}"
+          Name="ahReadingType"
+          TextSize="32" />
+        <ModelField
+          ID="{04ec8c36-5d94-492c-b9d8-2f321b5ee8f7}"
+          Name="ahType"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        DistributionType="Universal"
+        Group="Assets"
+        ID="{802298f6-26f0-48fd-8624-decbece2b194}"
+        IsRootDefinition="True"
+        Name="AH_Failure">
+        <ModelField
+          ID="{f124eb94-83d9-4e76-a625-93d140d55b22}"
+          Name="ahCodeType"
+          TextSize="32" />
+        <ModelField
+          ID="{8b8e7721-a52a-4e57-9391-7e8bd97fe9c7}"
+          Name="ahDescription" />
+        <ModelField
+          AllowNull="False"
+          ID="{b7223cf7-4a50-4cfa-8053-cf2d0b76b0cc}"
+          Name="ahExRowstamp"
+          TextSize="12" />
+        <ModelField
+          ID="{7b975d0a-b22b-41f8-b97a-01d016e82855}"
+          Name="ahExUid"
+          TextSize="12" />
+        <ModelField
+          ID="{033afd1b-c2da-4999-b5fa-64a30748d1b6}"
+          Name="ahFailure"
+          TextSize="32" />
+        <ModelField
+          ID="{603656e2-927f-47bb-99fe-6b66583551b5}"
+          Name="ahIdoDelete"
+          TextSize="32" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{e6a36c3c-8f9d-41e6-bb95-4bcdf873d2ff}"
+          IsParent="True"
+          Name="ahParentRef"
+          ReferenceClass="AH_Failure"
+          ReferenceCollection="ahChildren" />
+        <ModelField
+          CollectionClass="AH_Failure"
+          FieldType="Collection"
+          ID="{690a5c21-cf6a-4f6a-a1f9-bbcbf9f664a3}"
+          Name="ahChildren"
+          ReferenceParent="ahParentRef" />
+        <ModelField
+          FieldType="Blob"
+          ID="{fd38ff69-4259-434d-9930-f73ac6ca8ea4}"
+          Name="ahValidCombinations" />
+        <ModelField
+          FieldType="Number"
+          ID="{04ee40ce-51d5-42b5-bceb-9043e28e28b3}"
+          Name="ahIndex"
+          NumberType="Int32" />
+      </ModelClass>
+      <ModelClass
+        Group="Assets"
+        ID="{dbd9118a-f748-484c-b959-1b4095d122c5}"
+        IsRootDefinition="True"
+        Name="AH_AssetXferSummary">
+        <ModelField
+          ID="{429d8b12-f246-4e2f-8584-8f67bb22dc4b}"
+          Name="ahDestLocation"
+          TextSize="12" />
+        <ModelField
+          ID="{a9e8364a-cf13-4cba-8592-ce36b6af4961}"
+          Name="ahDestLocationDesc"
+          TextSize="100" />
+        <ModelField
+          Comments="Destination AssetNum"
+          ID="{bfba7dbd-99ac-4f8c-af80-250db6b29e64}"
+          Name="ahDestParent"
+          TextSize="32" />
+        <ModelField
+          ID="{442ac7da-2768-43d8-9130-3334943c96a4}"
+          Name="ahDestParentDesc"
+          TextSize="100" />
+        <ModelField
+          ID="{ee9c4c05-8704-472d-b838-719de4c85dc8}"
+          Name="ahEnterBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{cdf2c7ed-6c97-49ab-92a2-18dff8a065ab}"
+          Indexed="True"
+          Name="ahExUID"
+          NumberType="Int32" />
+        <ModelField
+          AllowNull="False"
+          FieldType="Timestamp"
+          ID="{6799b94d-4ee3-4b55-8911-117ee7b8c49d}"
+          Name="ahMovedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{64102c98-7d6e-4045-8311-56fe29e4926f}"
+          Name="ahSourceLocation"
+          TextSize="12" />
+        <ModelField
+          ID="{ec509259-568c-4c87-8c08-9cb36680781b}"
+          Name="ahSourceLocationDesc"
+          TextSize="100" />
+        <ModelField
+          Comments="Parent AssetNum"
+          ID="{d0e877dc-9f4d-4eab-9bc1-04e5fb45bdbf}"
+          Name="ahSourceParent"
+          TextSize="32" />
+        <ModelField
+          ID="{833ce61b-4cc6-4e46-ade0-9bf9cf9116f7}"
+          Name="ahSourceParentDesc"
+          TextSize="100" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{ff0d3836-aeea-4f08-b5a8-5f167ed831a9}"
+          Name="ahTransDateTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Reference"
+          ID="{7a7b166a-5842-4d6c-a2fc-21bd8cb4b105}"
+          Indexed="True"
+          IsParent="True"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset"
+          ReferenceCollection="ahXfers" />
+      </ModelClass>
+      <ModelClass
+        Group="Assets"
+        ID="{1caf992a-d5e7-42cc-95f2-de20fd718816}"
+        IsRootDefinition="True"
+        Name="AH_AssetProp">
+        <ModelField
+          ID="{2a8e2986-f518-47ed-8580-248d44004af6}"
+          Name="ahDataType"
+          TextSize="32" />
+        <ModelField
+          ID="{67526b2f-bc9f-4851-96a4-193db5baee12}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{15d7a8fb-1fca-4ebe-b542-f0af79932bc8}"
+          Name="ahExOrg"
+          TextSize="32" />
+        <ModelField
+          ID="{f5de1f19-e3e0-4de8-a253-69c94b57463b}"
+          Name="ahExSite"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{d4f53cc0-8e0c-47b4-9edb-9bf07940d9eb}"
+          Indexed="True"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{5ea85e5f-94a1-444a-a45c-1d0de75326b7}"
+          Name="ahIdoDelete"
+          TextSize="32" />
+        <ModelField
+          ID="{aa38918d-c8cf-4524-95d6-1fdbe0fb9c96}"
+          Name="ahMeasUnit"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{b62de6e7-c750-4b32-93a5-725ca92c8948}"
+          Name="ahNumValue"
+          NumberType="Decimal" />
+        <ModelField
+          ID="{98fd4625-b807-44b9-b25a-62fa9fa6229b}"
+          Name="ahProperty"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{3caa9bcc-6d4c-4e44-acc0-ad5ee13b8947}"
+          Name="ahSequence"
+          NumberType="Int8" />
+        <ModelField
+          ID="{38a14226-b71f-4d18-9514-467e5b867a72}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{8a9eee25-9f6c-440a-a9f9-6fff38602895}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{d65cf5a1-af7e-4b1f-877f-5c336d9ee623}"
+          Name="ahValue" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{a619dadf-89b3-4d2e-8994-ba2d8ce9823d}"
+          IsParent="True"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset"
+          ReferenceCollection="ahAttributes" />
+      </ModelClass>
+      <ModelClass
+        Group="Assets"
+        ID="{f5a94be9-a246-4d67-9062-e37c4ca0f0d2}"
+        IsRootDefinition="True"
+        Name="AH_AssetHistory">
+        <ModelField
+          FieldType="Number"
+          ID="{d850f831-fe38-4b41-a030-5d858dc320c7}"
+          Indexed="True"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{cb97342d-91d3-4814-9599-1f04d517e246}"
+          Name="ahIdoDelete"
+          TextSize="32" />
+        <ModelField
+          ID="{6362f288-9c9d-4c90-9829-7d275bd06d53}"
+          Name="ahIdoKey"
+          TextSize="132" />
+        <ModelField
+          FieldType="Reference"
+          ID="{8c4c06fb-a091-4eca-b692-cad594b2532e}"
+          Name="ahWorkSummaryRef"
+          ReferenceClass="AH_WorkSummary" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{0b543ab6-8e36-4926-9cd1-31787047941b}"
+          IsParent="True"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset"
+          ReferenceCollection="ahHistory" />
+      </ModelClass>
+      <ModelClass
+        Group="System"
+        ID="{6219bcc5-58e4-41e0-9d24-d99722968457}"
+        IsReserved="True"
+        IsRootDefinition="True"
+        Name="AH_Document">
+        <ModelField
+          FieldID="6"
+          FieldType="Number"
+          ID="{644c9209-db9e-4ac6-bb11-d886b4c25796}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          FieldID="17"
+          FieldType="Reference"
+          ID="{af4d00dc-7a3e-48f8-af8f-e9fb9a0e9ffc}"
+          Name="ahMemoRef"
+          ReferenceClass="AH_Memo" />
+        <ModelField
+          FieldID="23"
+          FieldType="Reference"
+          ID="{5d9b5fcd-6941-443f-8302-b77c9219f8ec}"
+          Name="ahAttachmentRef"
+          ReferenceClass="AH_AttachedFile" />
+        <ModelField
+          FieldID="7"
+          ID="{c99b5a6f-11be-4511-9c41-32bc460c9fc9}"
+          Name="ahType"
+          TextSize="32" />
+        <ModelField
+          FieldID="19"
+          ID="{88e22a35-bd28-434b-8c2e-2449b4737eaf}"
+          Name="ahStatus"
+          TextSize="32" />
+        <ModelField
+          FieldID="20"
+          FieldType="Timestamp"
+          ID="{e9e3f01f-77c9-432c-9e47-62ca9361daa0}"
+          Name="ahStatusTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="8"
+          ID="{df3fc9c5-e4f9-4d1a-88d7-62c04600425b}"
+          Name="ahDocument"
+          TextSize="32" />
+        <ModelField
+          FieldID="11"
+          ID="{d35ba0a1-de24-4cb9-b373-9bb589650f7c}"
+          Name="ahExOwnerTable"
+          TextSize="32" />
+        <ModelField
+          FieldID="2"
+          ID="{3a902126-6597-4b89-bc1a-421cc13799b1}"
+          Name="ahChangedBy"
+          TextSize="32" />
+        <ModelField
+          FieldID="3"
+          FieldType="Timestamp"
+          ID="{e059f463-fb04-40ad-a293-82bf01f869aa}"
+          Name="ahChangedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="4"
+          ID="{f97ebb9c-096d-4861-9fab-b927841ed204}"
+          Name="ahCreatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldID="5"
+          FieldType="Timestamp"
+          ID="{893da362-dfb1-439c-b727-115ebe5e7043}"
+          Name="ahCreatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldID="18"
+          FieldType="Number"
+          ID="{1a2ee3de-1d8a-4f9a-9635-1ffd0e668da4}"
+          Name="ahExDocInfoUid"
+          NumberType="Int32" />
+        <ModelField
+          FieldID="12"
+          ID="{dcc3b1b1-e94f-49a3-a9f9-a2f8593e3793}"
+          Name="ahDescription" />
+        <ModelField
+          FieldID="21"
+          ID="{b49e923e-3b8d-4fce-8aa1-96a01dbf2fdd}"
+          Name="ahUrlName" />
+        <ModelField
+          FieldID="22"
+          ID="{64608acc-6cf7-4d23-a137-3fe368955d03}"
+          Name="ahUrlType"
+          TextSize="32" />
+        <ModelField
+          AllowNull="False"
+          FieldID="24"
+          ID="{93f37d6d-3e55-4433-ac41-2de2d2c0c0e4}"
+          IsReadOnly="True"
+          IsTableUniqueID="True"
+          Name="ahGuid"
+          TextSize="48" />
+        <ModelField
+          Comments="Contains actual address. Can be more then 255 chars."
+          FieldID="37"
+          FieldType="Memo"
+          ID="{f4699d09-2540-43a4-9232-e316c1402752}"
+          Name="ahUrl" />
+        <ModelField
+          Comments=""
+          FieldID="28"
+          ID="{11bef048-8e78-4530-a377-0f82b4535644}"
+          Name="ahLanguage"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Maintenance"
+        ID="{bba2fe84-0c76-435a-8e1c-7b3aadb6fec1}"
+        IsRootDefinition="True"
+        Name="AH_FailureReport">
+        <ModelField
+          AlwaysDistribute="False"
+          FieldID="9"
+          FieldType="Reference"
+          ID="{3a96af25-1eba-479e-937b-bd44e8d43d88}"
+          IsParent="True"
+          Name="ahWorkOrderRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahFailureReports" />
+        <ModelField
+          ID="{db4c02c5-b4af-4193-b67c-910832143f05}"
+          Name="ahAsset"
+          TextSize="32" />
+        <ModelField
+          ID="{0627bd94-324a-4cb3-8700-c1732f86bfd3}"
+          Name="ahExOrg"
+          TextSize="32" />
+        <ModelField
+          Comments=""
+          ID="{5144a850-33e6-4289-affa-9b4623b07798}"
+          Name="ahExRowstamp"
+          TextSize="40" />
+        <ModelField
+          FieldType="Number"
+          ID="{410ba1e2-5d11-4a30-8059-cf60518061d8}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{3f79911f-4c44-458b-bf0a-905be8ce845e}"
+          Name="ahFailureCode"
+          TextSize="32" />
+        <ModelField
+          ID="{224c9710-0ac5-40e4-903b-072ed51202f9}"
+          Name="ahFailureType"
+          TextSize="12" />
+        <ModelField
+          Comments=""
+          ID="{94d3fbd6-2e7f-406b-bf05-2dda4c37ec5a}"
+          Name="ahIdoKey"
+          TextSize="20" />
+        <ModelField
+          FieldType="Number"
+          ID="{e0cd8627-e926-4324-b4ac-d48af199ca2b}"
+          Name="ahLineNum"
+          NumberType="Int32" />
+        <ModelField
+          ID="{2a836cf3-3c35-471c-bafc-c00134255ed5}"
+          Name="ahProblemCode"
+          TextSize="32" />
+        <ModelField
+          ID="{b4896f08-b3fe-4210-a6b5-3a235c04ff77}"
+          Name="ahCauseCode"
+          TextSize="32" />
+        <ModelField
+          ID="{3ddcd8f3-d91e-45d7-9bb4-0d65cdfc6ebf}"
+          Name="ahRemedyCode"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        Name="AH_Xact" />
+      <ModelClass
+        DistributionType="RuleBased"
+        Group="Maintenance"
+        ID="{c15715ad-38e0-46cf-84ed-7f3ce189e5b8}"
+        IsRootDefinition="True"
+        Name="AH_JobPlan">
+        <ModelField
+          ID="{ec4227ce-9089-44cf-9684-013b248ac17d}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{38b9fd67-490e-43ff-9efe-21a02b6c48c6}"
+          Name="ahExOrg"
+          TextSize="32" />
+        <ModelField
+          ID="{9485efca-da05-4ee4-bb24-e01225fca703}"
+          Name="ahExSite"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{d88a58bc-5e84-470a-9cdc-a2821fc2e515}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{00f2bd97-95b7-4b18-afed-ceaedd0e2f8b}"
+          Name="ahIdoKey"
+          TextSize="64" />
+        <ModelField
+          ID="{cbc0ac9b-6d7c-428a-be05-5cfb4a6a959e}"
+          Name="ahJobPlan"
+          TextSize="32" />
+        <ModelField
+          ID="{6a16b622-0a11-4a45-83fe-530ac1a246a3}"
+          Name="ahStatus"
+          TextSize="32" />
+        <ModelField
+          ID="{c1f4cd3b-ca6c-4302-89b2-02446336326a}"
+          Name="ahType"
+          TextSize="32" />
+        <ModelField
+          ID="{ac9d2fb9-69d0-4066-9bec-436da8497335}"
+          Name="ahUpdatedBy"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{d6a29a6a-4b7b-497d-9a29-257ce2cde07c}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{8576b430-b0a8-4810-b7f6-e20be4d73b75}"
+          Indexed="True"
+          Name="ahRowStamp"
+          TextSize="40" />
+        <ModelField
+          CollectionClass="AH_JobTask"
+          FieldType="Collection"
+          ID="{e07d3f62-b608-49f5-b820-bdf41e0fcf1f}"
+          Name="ahTasks"
+          ReferenceParent="ahJobPlanRef" />
+      </ModelClass>
+      <ModelClass
+        Comments="Planned Task"
+        Group="Maintenance"
+        ID="{d16f8dac-7578-4c82-92fb-4ce198647ce9}"
+        IsRootDefinition="True"
+        Name="AH_JobTask">
+        <ModelField
+          ID="{8db0c3ff-1b3d-4d2a-ab25-95b5c8361eaa}"
+          Name="ahDataType"
+          TextSize="32" />
+        <ModelField
+          ID="{d05e8cb3-b3f5-465d-9cc7-c6b706eb0d2c}"
+          Name="ahDescription" />
+        <ModelField
+          FieldType="Number"
+          ID="{d2891718-d1f6-4fcc-94c1-07fa526343d7}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{0619e7ef-c5b0-468a-a9cb-45bf41977c49}"
+          Name="ahIdoDelete"
+          TextSize="32" />
+        <ModelField
+          ID="{bdf1f5cc-388c-444b-8761-434b68cddd5f}"
+          Name="ahIdoKey"
+          TextSize="64" />
+        <ModelField
+          ID="{2c447bab-b2f8-4deb-9f50-7025d9fbc0d6}"
+          Name="ahReqValue"
+          TextSize="64" />
+        <ModelField
+          FieldType="Number"
+          ID="{c7b628db-546e-4193-8e1f-b1fe85ef9816}"
+          Name="ahSequence"
+          NumberType="Int32" />
+        <ModelField
+          ID="{4c11418d-5d47-44ee-9019-212c6ee188dd}"
+          Name="ahType"
+          TextSize="32" />
+        <ModelField
+          FieldType="Reference"
+          ID="{af857a45-8324-4c43-b7d8-ef87b48e0389}"
+          IsParent="True"
+          Name="ahJobPlanRef"
+          ReferenceClass="AH_JobPlan"
+          ReferenceCollection="ahTasks" />
+      </ModelClass>
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Maintenance"
+        ID="{42e11e29-c8f2-48a4-a5c7-faf6775757d6}"
+        IsRootDefinition="True"
+        Name="AH_LaborXact">
+        <ModelField
+          ID="{def8b347-afb7-4db8-a4be-76e79791aa30}"
+          Name="ahAssetNum"
+          TextSize="12" />
+        <ModelField
+          ID="{91a899d2-e757-42fe-be1d-338ec7390842}"
+          Name="ahCraft"
+          TextSize="20" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{92fe13c4-5d68-48a3-bd75-8f05ba40d565}"
+          Name="ahEnteredAsTask" />
+        <ModelField
+          ID="{3cfb8421-a983-413f-a2e7-e5bc9b30ccd0}"
+          Name="ahEnteredBy"
+          TextSize="30" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{746bd4db-e4b9-4093-88b4-f2987f7f5807}"
+          Name="ahEnteredTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Number"
+          ID="{573d5319-1037-4652-9c7f-156cf571d3ae}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{7fc261d4-098d-4a16-82b5-014eee19d376}"
+          Name="ahFinancialPeriod"
+          TextSize="6" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{37d974ad-db05-48b7-a90e-3608f3945269}"
+          Name="ahFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{660cbab4-6819-4a5f-a75f-af82a86c3e38}"
+          Name="ahLaborCode"
+          TextSize="20" />
+        <ModelField
+          ID="{ace5f896-d854-412e-8ebc-60b4e1b8ef4a}"
+          Name="ahLaborTask"
+          TextSize="32" />
+        <ModelField
+          ID="{0b993726-ca6b-4869-b862-2a2c188643f5}"
+          Name="ahNotes"
+          TextSize="40" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{cef8a8cf-6ba2-4a1c-b186-d0c725af4c33}"
+          Name="ahOutside" />
+        <ModelField
+          FieldType="Number"
+          ID="{e5b5cf13-b6b1-4a7d-9083-806935c27363}"
+          Name="ahPayRate"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Number"
+          ID="{a54d45f4-e9bf-4b09-a4c7-a4dbbef883ec}"
+          Name="ahRegularHrs"
+          NumberPrecision="2"
+          NumberType="Decimal" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{f32ee6d8-a7c7-4eb9-b14c-e04954c1a49a}"
+          Name="ahRollup" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{9d9e0839-8cfb-4d6f-b777-cfb9792312e5}"
+          Name="ahStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{f5a93316-9b60-4220-8d3d-632e3e5bb226}"
+          Name="ahXactType"
+          TextSize="18" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{5fa69f9f-59e5-4fe4-963e-126e6fde9f49}"
+          IsParent="True"
+          Name="ahWorkOrderRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahLaborXacts" />
+      </ModelClass>
+      <ModelClass
+        Name="AH_Memo" />
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Maintenance"
+        ID="{1c14bd20-8c6f-45dc-9746-8dd4698da768}"
+        IsRootDefinition="True"
+        Name="AH_WorkLog">
+        <ModelField
+          FieldID="14"
+          FieldType="Number"
+          ID="{fd3041fd-514c-4bb6-bbac-fd8457267fc6}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          FieldID="5"
+          ID="{a2717bf4-d7d2-41e3-b376-aef23f6be01e}"
+          Name="ahExOrg"
+          TextSize="32" />
+        <ModelField
+          FieldID="20"
+          ID="{9cc3c117-da46-4b23-b25b-b856e4bd6ec4}"
+          Name="ahUid"
+          TextSize="64" />
+        <ModelField
+          FieldID="7"
+          ID="{7bb8d364-3bc4-45b3-bff5-7000852166f4}"
+          Name="ahClass"
+          TextSize="32" />
+        <ModelField
+          FieldID="19"
+          FieldType="Memo"
+          ID="{681d1b83-54df-4b92-b531-248402cb82ba}"
+          Name="ahMemo" />
+        <ModelField
+          FieldID="24"
+          FieldType="Reference"
+          ID="{52ef6147-1eca-4144-968f-9c3bbd07dce8}"
+          IsParent="True"
+          Name="ahWorkOrderRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahWorkLogs" />
+        <ModelField
+          FieldType="Reference"
+          ID="{85b02a13-6c24-4a12-bbbc-ae35b818ac91}"
+          Indexed="True"
+          IsParent="True"
+          Name="ahTaskRef"
+          ReferenceClass="AH_Task"
+          ReferenceCollection="ahWorkLogs" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{72229ea7-1ce7-4bd4-a043-859bfef388a2}"
+          Name="ahClientViewable" />
+      </ModelClass>
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Maintenance"
+        ID="{71e9cdfd-7460-4d39-99fe-52bc9f75c979}"
+        IsRootDefinition="True"
+        Name="AH_WorkJournal">
+        <ModelField
+          ID="{e079a6c4-7d15-47e4-8333-cd4ff119784e}"
+          Name="ahClass"
+          TextSize="30" />
+        <ModelField
+          Comments="The AH_Employee.ahEmployee of the person who creates the work journal."
+          ID="{70f90646-7b93-46dd-91b7-3236dc76c375}"
+          Name="ahCurrentUser"
+          TextSize="32" />
+        <ModelField
+          ID="{61e3dbe1-e02b-4c57-a26b-f83126b1202e}"
+          Name="ahField"
+          TextSize="32" />
+        <ModelField
+          Comments="Which application logged the work journal (Maintenance, adapter, etc)"
+          ID="{78ae18aa-5cfb-4515-8755-64c9ead3e6a1}"
+          Name="ahLoggedBy"
+          TextSize="32" />
+        <ModelField
+          ID="{b39c534e-6e7d-4777-814c-19a613078856}"
+          Name="ahOldValue" />
+        <ModelField
+          FieldType="Number"
+          ID="{ef21c0db-8c87-4eb6-97b2-03d9ef1cf20e}"
+          Name="ahPKey"
+          NumberType="Int32" />
+        <ModelField
+          ID="{943d3956-70ee-4f14-a5d7-e38b13fb7d4d}"
+          Name="ahValue" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldID="8"
+          FieldType="Reference"
+          ID="{c5f3f83a-0ba6-4b0c-a86f-43d0ac502347}"
+          Name="ahWorkAssignRef"
+          ReferenceClass="AH_WorkAssign" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{fc1e286e-77af-4c6e-bd31-59d57acec063}"
+          IsParent="True"
+          Name="ahTaskRef"
+          ReferenceClass="AH_Task"
+          ReferenceCollection="AH_WorkJournals" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{2214870c-9d6c-49a3-ae1c-45cb7b6c7a05}"
+          IsParent="True"
+          Name="ahWorkOrderRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahJournalEntries" />
+      </ModelClass>
+      <ModelClass
+        Comments="Link between User and Work Order"
+        Group="Maintenance"
+        ID="{744bfa69-b9df-4146-9c30-462546b9b1f2}"
+        IsRootDefinition="True"
+        Name="AH_WorkAssign">
+        <ModelField
+          FieldType="Timestamp"
+          ID="{73c24c9d-2e54-4dd9-997a-7805e245318b}"
+          Name="ahAcceptedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{0d5979e3-5068-4af4-bb47-b6e4e906553d}"
+          Name="ahAcceptStatus"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{407f7ba9-e44a-4fe4-bf76-3747c9955eb8}"
+          Name="ahActualFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{4968632d-240e-493c-b9b7-8ab7d6766596}"
+          Name="ahActualStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Number"
+          ID="{7ee8e07d-14be-442d-90fd-a7dc39977422}"
+          Name="ahAssign"
+          NumberType="Int32" />
+        <ModelField
+          ID="{27037e77-d6bc-4eed-a2bb-31f3beccb124}"
+          Name="ahAssignCode"
+          TextSize="32" />
+        <ModelField
+          ID="{1a76cf94-8db6-4a6a-97f8-f98418458b70}"
+          Name="ahDescription" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{f9768d68-9253-488b-ac8a-3c5615a974e8}"
+          Name="ahEstFinishTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{940ad922-4245-479b-a4b3-c37f0df22a00}"
+          Name="ahEstStartTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{06587389-a9c9-4c75-8d80-ea670065278d}"
+          Name="ahExId"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{1944cfbf-2859-4d02-8820-9cfd4bf38866}"
+          Name="ahExNode"
+          NumberType="Int32" />
+        <ModelField
+          Comments=""
+          ID="{7b7b6f73-b64a-47b3-bf84-93fb6b507065}"
+          Name="ahExRowstamp"
+          TextSize="64" />
+        <ModelField
+          FieldType="Number"
+          ID="{8162836a-a666-4739-9971-b93fad4339fc}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          Comments="Determines if the workorder is Preventative Maintenance"
+          FieldType="Boolean"
+          ID="{4f7070b4-d5de-45e0-98c3-f79803d53bb5}"
+          Name="ahIsPm"
+          Virtual="True">
+          <DataValue
+            Type="Formula"
+            Value="{ELEMENT}#StartsWith($ahWorkOrderRef.ahType, &quot;P&quot;)" />
+        </ModelField>
+        <ModelField
+          FieldType="Boolean"
+          ID="{aa5cb0ff-51c6-4341-be57-17b0646c0e06}"
+          Name="ahLinkSchedToJob" />
+        <ModelField
+          ID="{f2401820-e390-44bc-a8f0-a4c5d8a30d5a}"
+          Name="ahNotes"
+          TextSize="512" />
+        <ModelField
+          ID="{fb8b5492-2d3e-405f-916e-857aaaa5d6e4}"
+          Name="ahOwner"
+          TextSize="32" />
+        <ModelField
+          ID="{78cc365d-3c15-4785-9e35-151518ed89ca}"
+          Name="ahProcessBy"
+          TextSize="32" />
+        <ModelField
+          ID="{561efbe6-bb55-4504-922f-f88d4fde325e}"
+          Name="ahProcessName"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{9d10a04c-70b5-433a-8982-bc620271d3b2}"
+          Name="ahProcessRev"
+          NumberType="Int32" />
+        <ModelField
+          ID="{88287677-9fed-4a33-b399-9b20b703de10}"
+          Name="ahProcessStatus"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{89c22095-593a-4a81-b157-334ed56dab22}"
+          Name="ahProcessTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{aea91ce7-10d9-4cd9-b20e-8302f6557f91}"
+          Name="ahRole"
+          TextSize="16" />
+        <ModelField
+          Comments="A timestamp that indicates when the user started to work on this work assignment."
+          FieldType="Timestamp"
+          ID="{ecab1fd5-abd1-4998-952b-82dc6f17b13d}"
+          Name="ahStartWorkTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{121953dc-8102-4693-ad99-7cbd078116e6}"
+          Name="ahStatus"
+          TextSize="16" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{dce7c6ca-2502-4fec-a69f-7cc0c6e9deb9}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Number"
+          ID="{9344dd0c-ac79-44cb-af07-9c7e23d6a9f1}"
+          Name="dmExWorkflow"
+          NumberType="Int32" />
+        <ModelField
+          FieldType="Reference"
+          ID="{65acc05b-e373-460b-a334-30a20d99ef7b}"
+          IsParent="True"
+          Name="ahUserRef"
+          ReferenceClass="AH_User"
+          ReferenceCollection="ahWorkAssignments" />
+        <ModelField
+          FieldType="Reference"
+          ID="{53e00b10-564d-42e8-a010-5a987d905d6d}"
+          IsParent="True"
+          Name="ahWorkOrderRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahAssignments" />
+      </ModelClass>
+      <ModelClass
+        Group="Maintenance"
+        ID="{8392bf59-7fec-40ce-91b8-ee7522c8897f}"
+        IsRootDefinition="True"
+        Name="AH_WorkDoc">
+        <ModelField
+          FieldType="Timestamp"
+          ID="{74fb112b-5ce0-4a39-97b3-a4c0b8ddca3a}"
+          Name="ahChangedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{00ecb5b7-52c4-4378-837f-cdb4b94e33af}"
+          Name="ahCreatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Number"
+          ID="{a6dc04b9-f746-4a8d-a623-add028a2619c}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{f3d2a7fc-9159-4e60-8cb7-62a54de668d0}"
+          Name="ahGuid"
+          TextSize="48" />
+        <ModelField
+          ID="{618bc5c9-14c0-4fa2-8259-ba33bd18ea80}"
+          Name="ahProcessStatus"
+          TextSize="30" />
+        <ModelField
+          FieldType="Reference"
+          ID="{3df98d96-62fb-419b-884e-239323ab951b}"
+          Name="ahDocumentRef"
+          ReferenceClass="AH_Document" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{04cb5443-2b44-4175-b519-2cac4df129eb}"
+          IsParent="True"
+          Name="ahWorkOrderRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahDocuments" />
+      </ModelClass>
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Maintenance"
+        ID="{e996286c-3fae-48b6-ae2e-eef1d67b05a6}"
+        IsRootDefinition="True"
+        Name="AH_WorkRequest">
+        <ModelField
+          ID="{f78afb21-eb78-435d-8058-8573bb12d7cc}"
+          Name="ahAsset"
+          TextSize="32" />
+        <ModelField
+          ID="{2ed122dd-c690-42a2-95ef-30e2ae0f0031}"
+          Name="ahCategory"
+          TextSize="4" />
+        <ModelField
+          ID="{dfaded4d-2c9b-40c7-a955-d0cb6be0d57b}"
+          Name="ahCause"
+          TextSize="32" />
+        <ModelField
+          FieldType="Memo"
+          ID="{cf4a6236-d0d1-4242-800b-6f642f18113e}"
+          Name="ahComment" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{0211f4a1-adb5-4f58-963e-f495e566c5ef}"
+          Name="ahIsBreakdown" />
+        <ModelField
+          ID="{28f47cb0-10d6-4842-8d01-12e9fa466dba}"
+          Name="ahLocation"
+          TextSize="32" />
+        <ModelField
+          FieldType="Number"
+          ID="{e86670e2-d840-4a8e-8c5e-60871d246c2d}"
+          Name="ahPriority"
+          NumberType="Int32" />
+        <ModelField
+          ID="{57e58cad-9c09-4b35-b8aa-f601c06e4838}"
+          Name="ahProblem"
+          TextSize="32" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{e99c51eb-62f4-4519-a460-837d42b23a5a}"
+          Name="ahRequiredTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{90c023aa-4cfa-4d94-99fd-95da5857b688}"
+          Name="ahWorkOrder"
+          TextSize="32" />
+        <ModelField
+          ID="{8ad36e79-595e-498e-8502-a3e2b8cedafe}"
+          Name="ahWorkRequest"
+          TextSize="64" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{1f2b0db5-7b75-42a1-bace-030f9c8e2b44}"
+          Name="dteWorkOrderRef"
+          ReferenceClass="AH_WorkOrder" />
+        <ModelField
+          CollectionClass="AH_WorkReqDoc"
+          FieldType="Collection"
+          ID="{310af68b-1e5f-4313-92f3-e12e29539f07}"
+          Name="ahWorkReqDocs"
+          ReferenceParent="ahWorkRequestRef" />
+      </ModelClass>
+      <ModelClass
+        Group="Maintenance"
+        ID="{720d581f-6195-4fc8-bdf7-6150bbb06fc7}"
+        IsRootDefinition="True"
+        Name="AH_WorkAsset">
+        <ModelField
+          FieldType="Reference"
+          ID="{0467de1a-d5cc-40e0-bea1-72978e3b77e3}"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset" />
+        <ModelField
+          AlwaysDistribute="False"
+          FieldType="Reference"
+          ID="{72a0e2d7-7e6c-49a1-9019-4b22ed90afcb}"
+          IsParent="True"
+          Name="ahWorkOrderRef"
+          ReferenceClass="AH_WorkOrder"
+          ReferenceCollection="ahAssets" />
+        <ModelField
+          FieldType="Number"
+          ID="{13b46b32-0f6d-4908-b502-e65804d4a997}"
+          Name="ahSequence"
+          NumberType="Int32" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{4b66a8bd-f549-47f1-bbc5-fc49be5ce812}"
+          Name="ahComplete" />
+        <ModelField
+          FieldType="Boolean"
+          ID="{ec4d30e8-4fbd-4166-aef0-707e75cad0bd}"
+          Name="ahInvalid" />
+        <ModelField
+          ID="{e6037839-66de-4a94-b218-cb84e3591000}"
+          Name="ahIdoKey"
+          TextSize="64" />
+        <ModelField
+          ID="{74f8b2c6-6fe1-43ff-b40b-14360f1bb9e4}"
+          Name="ahIdoDelete"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        ID="{f141abb9-7083-4962-a165-685bef6a7b92}"
+        Name="AH_Address">
+        <ModelField
+          FieldType="Number"
+          ID="{13114d42-f043-4166-870f-028f3ee32daa}"
+          Name="ahExId"
+          NumberType="Int32" />
+      </ModelClass>
+      <ModelClass
+        Comments="Also known as a subscription to a location"
+        Group="Assets"
+        ID="{48b3b3a1-8418-420b-a066-a36d999a8736}"
+        IsRootDefinition="True"
+        Name="AH_UserLoc">
+        <ModelField
+          FieldType="Reference"
+          ID="{2536a7cf-e0c7-4944-bfa1-01c03103880b}"
+          Name="ahLocationRef"
+          ReferenceClass="AH_Location" />
+        <ModelField
+          ID="{1417c36f-00ae-4b06-8e63-f168d304d10d}"
+          Name="ahSource"
+          TextSize="32" />
+        <ModelField
+          FieldType="Reference"
+          ID="{4264b2a9-e7f4-4533-a5bd-e7bd13b93598}"
+          IsParent="True"
+          Name="ahUserRef"
+          ReferenceClass="AH_User"
+          ReferenceCollection="ahUserLocations" />
+      </ModelClass>
+      <ModelClass
+        ID="{f04fec98-8ab3-434b-bb7f-fd3bce1945ab}"
+        Name="AH_User">
+        <ModelField
+          CollectionClass="AH_UserLoc"
+          FieldType="Collection"
+          ID="{67fa7e73-39f1-446f-9084-af3484348ad0}"
+          Name="ahUserLocations"
+          ReferenceParent="ahUserRef" />
+        <ModelField
+          CollectionClass="AH_WorkAssign"
+          FieldType="Collection"
+          ID="{fd824883-6387-454a-bb26-146294b947e3}"
+          Name="ahWorkAssignments"
+          ReferenceParent="ahUserRef" />
+      </ModelClass>
+      <ModelClass
+        Group="System"
+        ID="{075a0376-7bc5-4c59-9857-651533d71bae}"
+        IsRootDefinition="True"
+        Name="AH_Vendor">
+        <ModelField
+          ID="{74be110b-7834-489f-b18d-f5a8c5b4a3b6}"
+          Name="ahDescription" />
+        <ModelField
+          ID="{3cffc7fc-b383-439b-b877-ee39b836f067}"
+          Name="ahName" />
+        <ModelField
+          ID="{8f553fd1-e97d-4b46-93ab-f30b9164180c}"
+          Name="ahUpdatedBy" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{d6c031b7-533b-44fd-9989-aa956ee14baa}"
+          Name="ahUpdatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          ID="{4ccca7d9-3d91-45e1-a976-0db0bb8e0082}"
+          Name="ahVendor"
+          TextSize="32" />
+      </ModelClass>
+      <ModelClass
+        Group="Maintenance"
+        ID="{418ebf0d-abea-4e94-87ab-09c6e3a4478a}"
+        IsRootDefinition="True"
+        Name="AH_WorkReqDoc">
+        <ModelField
+          FieldType="Timestamp"
+          ID="{38e321d3-b8c4-4dd5-bb1c-e054fff88c84}"
+          Name="ahChangedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Timestamp"
+          ID="{ee0cec68-c3d5-4bc9-9365-b58c45aeece8}"
+          Name="ahCreatedTs"
+          TimestampType="Timestamp" />
+        <ModelField
+          FieldType="Number"
+          ID="{a1284280-6d37-40fe-b491-7e7b65d8f195}"
+          Name="ahExUid"
+          NumberType="Int32" />
+        <ModelField
+          ID="{212b3654-33f6-436f-9004-6d5bb928826b}"
+          Name="ahProcessStatus"
+          TextSize="30" />
+        <ModelField
+          FieldType="Reference"
+          ID="{ef962dda-a8b3-4f70-ad6d-5a75b639da4b}"
+          Name="ahDocumentRef"
+          ReferenceClass="AH_Document" />
+        <ModelField
+          FieldType="Reference"
+          ID="{a06fb029-b247-4570-b960-d7e86266c7f6}"
+          IsParent="True"
+          Name="ahWorkRequestRef"
+          ReferenceClass="AH_WorkRequest"
+          ReferenceCollection="ahWorkReqDocs" />
+      </ModelClass>
+      <ModelClass
+        BaseClass="AH_Xact"
+        Group="Assets"
+        ID="{8092a2f8-66ed-4809-b110-40a084d409f4}"
+        IsRootDefinition="True"
+        Name="AH_AssetLog">
+        <ModelField
+          FieldType="Reference"
+          ID="{e02776ec-e5a0-48ef-8033-cbeab0a3d2f1}"
+          IsParent="True"
+          Name="ahAssetRef"
+          ReferenceClass="AH_Asset"
+          ReferenceCollection="ahAssetLogs" />
+      </ModelClass>
+    </ModelClasses>
+  </Model>
+  <PartialDataModelDependencies>
+    <Reference
+      Name="System"
+      RelPath="System.pdm"
+      TargetID="{c061c71f-82a7-4532-b462-ca488b9b76e4}" />
+  </PartialDataModelDependencies>
+</PartialDataModel>

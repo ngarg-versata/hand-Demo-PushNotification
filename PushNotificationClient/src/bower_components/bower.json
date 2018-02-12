@@ -1,0 +1,15 @@
+{
+    "name": "dojo",
+    "version": "1.10.1",
+    "main": [],
+    "ignore": [
+        "**/.*",
+        "test",
+        "tests",
+        "demo",
+        "demos",
+        "dojo-src"
+    ],
+    "devDependencies": {},
+    "dependencies": {}
+}

@@ -1,0 +1,32 @@
+{
+	"id": "PushNotificationClient",
+	"template": "app/shared/master.html",
+	"controller": "app/shared/master",
+	"defaultView": "pushNotification,Start",
+	"loaderConfig": {
+		"baseUrl": "",
+		"paths": {
+			"src": "src",
+            "app": "src/app",
+            "dojo": "src/bower_components/dojo",
+          	"dojox": "src/bower_components/dojox",
+          	"dijit": "src/bower_components/dijit",
+          	"mdoApi": "src/bower_components/athand-mdojs/mdo"
+		}
+	},
+	"controllers": [
+		"dojox/app/controllers/Load",
+		"dojox/app/controllers/Transition",
+		"dojox/app/controllers/Layout"
+	],
+	"views": {
+		"pushNotification": {
+			"views": {
+				"Start": {
+					"template": "app/views/_templates/pushNotificationTemplate.html",
+					"controller": "app/views/pushNotification.js"
+				}
+			}
+		}
+	}
+}
